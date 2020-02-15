@@ -1,6 +1,1074 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据结构与算法之链表系列[题型篇]</title>
+    <url>/2020/02/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%93%BE%E8%A1%A8%E7%B3%BB%E5%88%97%5B%E9%A2%98%E5%9E%8B%E7%AF%87%5D/</url>
+    <content><![CDATA[<h1 id="数据结构与算法之链表系列【题型篇】"><a href="#数据结构与算法之链表系列【题型篇】" class="headerlink" title="数据结构与算法之链表系列【题型篇】"></a>数据结构与算法之链表系列【题型篇】</h1><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%93%BE%E8%A1%A8%E7%B3%BB%E5%88%97%E3%80%90%E9%A2%98%E5%9E%8B%E7%AF%87%E3%80%91%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.png?raw=true" alt="æ°æ®ç»æä¸ç®æ³ä¹é¾è¡¨ç³»åãé¢åç¯ãæç»´å¯¼å¾.png"></p>
+<br>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%93%BE%E8%A1%A8%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95.png?raw=true" alt="æ°æ®ç»æä¸ç®æ³ä¹é¾è¡¨ç³»åç®å½.png"></p>
+<br>
+
+<h2 id="写在前边"><a href="#写在前边" class="headerlink" title="写在前边"></a>写在前边</h2><p>如果你和小鹿一样，刚开始对链表的操作代码实现很懵的话，不妨按照小鹿经过一个月的时间对链表相关操作以及题型的整理总结，由浅入深进行适当的练习，我相信，当你真正的练习完这些题目，不但会让你失去链表对你心理上的困惑，而且对你学习其他数据结构有很大的信心和帮助！</p>
+<br>
+
+<h4 id="1、学习建议"><a href="#1、学习建议" class="headerlink" title="1、学习建议"></a>1、学习建议</h4><p>小鹿不建议你一口气去看完这篇所有的题目和练习，给自己制定一个小计划，我当初整理该题目的时候，每天都计划认真整理一到题目，把每道题分析透，这样才能达到最好的吸收。</p>
+<br>
+
+<h4 id="2、学习路径"><a href="#2、学习路径" class="headerlink" title="2、学习路径"></a>2、学习路径</h4><blockquote>
+<p>本篇分为三个阶段，基础练习阶段、进阶练习阶段、加强练习阶段。</p>
+</blockquote>
+<p>1）基础练习阶段</p>
+<p>首先进行第一个阶段之前，你已经对链表的基础知识能够熟练掌握，但是对于没有动手写过链表代码，那么你从第一阶段最基础的开始进行。确保每一个基础点要亲自动手用自己熟悉的语言写出来，虽然本篇中基本都是 javascript 代码实现的，但是算法思路是一成不变的，如果遇到困难可以自行百度或谷歌，也可以下方给我进行留言。</p>
+<p>2）进阶练习阶段</p>
+<p>如果你对上述的链表基本代码已经完全熟练掌握了，那么恭喜你可以进行下一个阶段，进阶阶段，这一阶段增加的难度就是链表的操作是对于实际问题来解决的，所以非常锻炼你对问题的分析能力和解决能力，也考验你对代码的全面性、鲁棒性。这一阶段非常的重要，下面的每道题我都做出了详细的分析。</p>
+<p>3）加强练习阶段</p>
+<p>如果上述的进阶练习阶段的题型你都了如指掌了，那么不妨我们实战一下，LeetCode 汇聚了很多面试的题型，所以我在上边整理了几个经典的题目，你可以尝试着解答它们，相关题目的代码以及解题思路我都整理好了。这一阶段的题目小鹿会在后期不断的更新，这些题目你能够完全掌握，链表对你来说小菜一碟了。</p>
+<br>
+
+<h2 id="一、链表基础练习（阶段一）"><a href="#一、链表基础练习（阶段一）" class="headerlink" title="一、链表基础练习（阶段一）"></a>一、链表基础练习（阶段一）</h2><blockquote>
+<p>自己首相尝试着一个个攻破下方的链表中最基础的操作，相关代码我也整理好了（先自己尝试着去解决哦）。</p>
+</blockquote>
+<ul>
+<li><p>单链表的插入、删除、查找操作（<a href="https://github.com/luxiangqiang/Data-Structure-Coding/blob/master/Link_List/javascript/SinglyLinkedList.md" target="_blank" rel="noopener">点击查看代码实现</a>）。</p>
+</li>
+<li><p>循环链表的插入、删除、查找操作 (<a href="https://github.com/luxiangqiang/Data-Structure-Coding/blob/master/Link_List/javascript/CircularLinkedList.md" target="_blank" rel="noopener">点击查看代码实现</a>)。</p>
+</li>
+<li><p>双向链表的插入、删除、查找操作 (<a href="https://github.com/luxiangqiang/Data-Structure-Coding/blob/master/Link_List/javascript/DoubleLinkedList.md" target="_blank" rel="noopener">点击查看代码实现</a>)。</p>
+</li>
+</ul>
+<br>
+
+<h2 id="二、链表进阶练习（阶段二）"><a href="#二、链表进阶练习（阶段二）" class="headerlink" title="二、链表进阶练习（阶段二）"></a>二、链表进阶练习（阶段二）</h2><h3 id="1、单链表从尾到头打印"><a href="#1、单链表从尾到头打印" class="headerlink" title="1、单链表从尾到头打印"></a>1、单链表从尾到头打印</h3><blockquote>
+<p>题目：输入一个链表的头结点，从尾到头反过来打印出每个节点的值。</p>
+</blockquote>
+<br>
+
+<h4 id="1-1-问题分析与解决"><a href="#1-1-问题分析与解决" class="headerlink" title="1.1 问题分析与解决"></a>1.1 问题分析与解决</h4><h6 id="▉-问题分析"><a href="#▉-问题分析" class="headerlink" title="▉ 问题分析"></a>▉ 问题分析</h6><p>1）看到题目第一想到的就是反转链表在打印输出，一种反转链表的方法，但是这种方法改变了原有的链表结构。</p>
+<blockquote>
+<p>缺点：使得链表的结构发生改变了。如果不改变链表结构应该怎么解决？</p>
+</blockquote>
+<p>2）从问题中可以得出，我们想要从尾到头打印链表，正常情况下是从头到尾打印的，我们就会想到最后的数据先打印，开始的数据最后打印，有种“先进后出”的特点，我们就能想到用“栈”这种结构，用栈来实现。</p>
+<blockquote>
+<p>缺点：代码不够简洁。</p>
+<p>优点：鲁棒性好（在不确定的情况下，程序仍然可以正确的执行）。</p>
+</blockquote>
+<p>3）提到栈这种数据结构，我们就会想到“递归”的实现就是用栈这种数据结构实现的。既然栈能实现，那么递归也能实现。</p>
+<blockquote>
+<p>缺点：如果链表很长，递归深度很深，导致堆栈溢出。</p>
+<p>优点：代码简洁、明了。</p>
+</blockquote>
+<br>
+
+<h6 id="▉-算法思路"><a href="#▉-算法思路" class="headerlink" title="▉ 算法思路"></a>▉ 算法思路</h6><blockquote>
+<p>得出以下几种实现方式：</p>
+<ul>
+<li>反转链表法</li>
+<li>栈实现</li>
+<li>递归实现</li>
+</ul>
+</blockquote>
+<p>1）反转链表实现：</p>
+<p>从尾到头输出链表的内容，一般的思路就是将链表反转过来，然后从头到尾输出数据。</p>
+<p>2）栈实现:</p>
+<p>从头到尾遍历单链表，将数据存储按照顺序存储到栈中。然后遍历整个栈，打印输出数据。</p>
+<p>3）递归实现：</p>
+<p>可以通过递归的方式来实现单链表从尾到头依次输出，递归过程涉及到“递”和“归”，反转链表输出数据，正式利用了循环“递”的过程，所以数据先从头部输出，那么递归采用的是“归”的过程来输出内容，输出当前结点先要输出当前节点的下一节点。</p>
+<br>
+
+<h6 id="▉-测试用例"><a href="#▉-测试用例" class="headerlink" title="▉ 测试用例"></a>▉ 测试用例</h6><blockquote>
+<p>在写代码之前，要想好测试用例才能写出健全、鲁棒性的代码，也是为了考虑到边界情况，往往也是整个程序最致命的地方，如果考虑不全面，就会出现 bug，导致程序崩溃。</p>
+</blockquote>
+<p>测试用例：</p>
+<p>1）输入空链表；</p>
+<p>2）输入的链表只有一个结点；</p>
+<p>3）输入的链表有多个结点。</p>
+<h6 id="▉-代码实现：反转链表法"><a href="#▉-代码实现：反转链表法" class="headerlink" title="▉ 代码实现：反转链表法"></a>▉ 代码实现：反转链表法</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//定义结点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(data)&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">        <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义链表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">new</span> Node(<span class="string">'head'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 功能：单链表反转</span></span><br><span class="line">    <span class="comment">// 步骤:</span></span><br><span class="line">    <span class="comment">// 1、定义三个指针(pre=null/next/current)</span></span><br><span class="line">    <span class="comment">// 2、判断链表是否可反转(头节点是否为空、是否有第二个结点)</span></span><br><span class="line">    <span class="comment">// 3、尾指针指向第一个结点的 next</span></span><br><span class="line">    <span class="comment">// 4、尾指针向前移动</span></span><br><span class="line">    <span class="comment">// 5、当前指针(current)向后移动</span></span><br><span class="line">    <span class="comment">// 6、将 head 指向单转好的结点</span></span><br><span class="line">    reverseList = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//声明三个指针</span></span><br><span class="line">        <span class="keyword">let</span> current = <span class="keyword">this</span>.head; <span class="comment">//当前指针指向头节点</span></span><br><span class="line">        <span class="keyword">let</span> pre = <span class="literal">null</span>;<span class="comment">//尾指针</span></span><br><span class="line">        <span class="keyword">let</span> next;<span class="comment">//指向当前指针的下一个指针</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断单链表是否符合反转的条件(一个结点以上)？</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.head == <span class="literal">null</span> || <span class="keyword">this</span>.head.next == <span class="literal">null</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//开始反转</span></span><br><span class="line">        <span class="keyword">while</span>(current !== <span class="literal">null</span>)&#123;</span><br><span class="line">            next = current.next;</span><br><span class="line">            current.next = pre;</span><br><span class="line">            pre = current;</span><br><span class="line">            current = next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.head = pre;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//输出结点</span></span><br><span class="line">    print = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head</span><br><span class="line">        <span class="comment">//如果结点不为空</span></span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(currentNode.data)</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-代码实现：循环栈"><a href="#▉-代码实现：循环栈" class="headerlink" title="▉ 代码实现：循环栈"></a>▉ 代码实现：循环栈</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法三：栈实现</span></span><br><span class="line"><span class="keyword">const</span> tailToHeadOutput = <span class="function">(<span class="params">currentNode</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> stack = [];</span><br><span class="line">    <span class="comment">//遍历链表，将数据入栈</span></span><br><span class="line">    <span class="keyword">while</span>(currentNode !== <span class="literal">null</span>)&#123;</span><br><span class="line">        stack.push(currentNode.data);</span><br><span class="line">        currentNode = currentNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历栈，数据出栈</span></span><br><span class="line">    <span class="keyword">while</span>(stack.length !== <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(stack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-代码实现：递归"><a href="#▉-代码实现：递归" class="headerlink" title="▉ 代码实现：递归"></a>▉ 代码实现：递归</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 步骤:</span></span><br><span class="line"><span class="comment">// 1、判断是否为空链表</span></span><br><span class="line"><span class="comment">// 2、终止条件（下一结点为空）</span></span><br><span class="line"><span class="comment">// 3、递归打印下一结点信息</span></span><br><span class="line"><span class="keyword">const</span> tailToHeadOutput = <span class="function">(<span class="params">head</span>)=&gt;</span>&#123;</span><br><span class="line">	<span class="comment">// 判断是否空链表</span></span><br><span class="line">	<span class="keyword">if</span>(head !== <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="comment">// 判断下一结点是否为空</span></span><br><span class="line">	    <span class="keyword">if</span>(head.next !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">// 下一结点不为空，先输出下一结点</span></span><br><span class="line">	        tailToHeadOutput(head.next)</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="built_in">console</span>.log(head.data);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	    <span class="built_in">console</span>.log(<span class="string">"空链表"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-性能分析"><a href="#▉-性能分析" class="headerlink" title="▉ 性能分析"></a>▉ 性能分析</h6><p>反转链表实现：</p>
+<ul>
+<li>时间复杂度：O(n)。需要遍历整个链表，时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(1)。不需要额外的栈存储空间，空间复杂度为 O(1)。</li>
+</ul>
+<p>循环栈实现：</p>
+<ul>
+<li>时间复杂度：O(n)。需要遍历整个链表，时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(n)。需要额外的栈存储空间，空间复杂度为 O(n)。</li>
+</ul>
+<p>递归实现：</p>
+<ul>
+<li>时间复杂度：O(n)。需要遍历整个链表，时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(n)。需要额外的栈存储空间，空间复杂度为 O(n)。</li>
+</ul>
+<br>
+
+<h4 id="2-2-小结"><a href="#2-2-小结" class="headerlink" title="2.2 小结"></a>2.2 小结</h4><h6 id="▉-考察内容"><a href="#▉-考察内容" class="headerlink" title="▉ 考察内容"></a>▉ 考察内容</h6><p>1）对单链表的基本操作。</p>
+<p>2）代码的鲁棒性。</p>
+<p>3）循环、递归、栈的灵活运用。</p>
+<br>
+
+<h6 id="▉-扩展思考：循环和递归"><a href="#▉-扩展思考：循环和递归" class="headerlink" title="▉ 扩展思考：循环和递归"></a>▉ 扩展思考：循环和递归</h6><p><strong>适用条件：</strong>如果需要进行多次计算相同的问题，将采用循环或递归的方式。</p>
+<p><strong>递归的优点：</strong>代码简洁。</p>
+<p><strong>递归的缺点：</strong></p>
+<p>1）堆栈溢出：函数调用自身，函数的临时变量是压栈的操作，当函数执行完，栈才清空，如果递归的规模过大，在函数内部一直执行函数的自身调用，临时变量一直压栈，系统栈或虚拟机栈内存小，导致堆栈溢出。</p>
+<p>2）重复计算：递归会出现很多的重复计算问题，重复计算对程序的性能有很大影响，导致消耗时间成指数增长，但是可以通过散列表的方式解决。</p>
+<p>3）高空间复杂度：递归的每次函数调用都要涉及到在内存开辟空间，压栈、出栈等操作，即耗时又耗费空间，导致递归的效率并不如循环的效率。</p>
+<p><strong>扩展：</strong></p>
+<p>1）递归—栈：递归的本质是栈，通常用栈循环解决的问题适合于递归。</p>
+<p>2）递归-动态规划：动态规划解决问题经常用递归的思路分析问题。关于递归重复计算问题，我们通常使用自下而上的解决思路（动态规划）来解决递归重复计算的问题。</p>
+<p>※ 具体看这篇之前写的 8000 字的完整章节：<a href="https://github.com/luxiangqiang/Blog/blob/master/articel/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%92%E5%BD%92%E7%B3%BB%E5%88%97.md" target="_blank" rel="noopener">数据结构与算法之递归系列</a></p>
+<br>
+
+<h6 id="▉-注意事项："><a href="#▉-注意事项：" class="headerlink" title="▉ 注意事项："></a>▉ 注意事项：</h6><p>1）涉及到循环解决的问题，可以想一想能不能使用递归来解决。</p>
+<p>2）用递归解决一定要铭记递归的缺点带来的性能问题。</p>
+<p>3）递归解决的问题，能不能用动态规划来解决，使得性能更高。</p>
+<p>4）用到栈这种数据结构，想一想递归是否可以实现呢。</p>
+<br>
+
+<h3 id="2、删除链表结点"><a href="#2、删除链表结点" class="headerlink" title="2、删除链表结点"></a>2、删除链表结点</h3><blockquote>
+<p>题目：在 O（1）的时间复杂度内删除链表节点。</p>
+<p>给定单向链表的头指针和一个节点指针，定义一个函数在 O（1）时间内删除该节点。</p>
+</blockquote>
+<br>
+
+<h4 id="2-1-问题分析与解决"><a href="#2-1-问题分析与解决" class="headerlink" title="2.1 问题分析与解决"></a>2.1 问题分析与解决</h4><h6 id="▉-问题分析-1"><a href="#▉-问题分析-1" class="headerlink" title="▉ 问题分析"></a>▉ 问题分析</h6><p>1）想必看到单链表删除节点的题，第一想到的就是删除链表结点需要以 O（n）时间复杂度遍历链表找到该结点的前结点，然后以 O（1）时间复杂度进行删除，时间复杂度为O（n）。而题目中的确实整体要求时间复杂度为 O（1）。</p>
+<p>2）怎么才能达到 O（1）的时间复杂度删除链表？如果不遍历不就可以了？如果直接删除的时间复杂度为 O（1），前提是我们需要知道前结点才能做到。我们就会想怎么做到不用遍历数据才能获取到前结点呢？而且必须保证时间复杂度为 O（1）。</p>
+<p>3）但是必须让自己多想一步就是如果删除的结点是尾结点怎么操作，如果删除的链表结点只有一个结点，即是尾结点又是头结点怎么办？</p>
+<br>
+
+<h6 id="▉-算法思路-1"><a href="#▉-算法思路-1" class="headerlink" title="▉ 算法思路"></a>▉ 算法思路</h6><p>得出以下几种实现方式：</p>
+<ul>
+<li>交换结点法</li>
+</ul>
+<p>1）这一有种技巧很难想到，就是我把当前结点的数据与下一结点的数据进行交换，删除下一结点不就可以达到时间复杂度为O（1）了吗。而且我们知道当前结点就是下一结点的前节点，perfect。</p>
+<p>2）针对以上两种特殊情况，如果是尾结点，没有下一结点，我们就从头遍历链表删除节点；如果即是尾结点又是头结点，那么删除头结点，并置于 null。</p>
+<br>
+
+<h6 id="▉-测试用例-1"><a href="#▉-测试用例-1" class="headerlink" title="▉ 测试用例"></a>▉ 测试用例</h6><p>1)  输入空链表；</p>
+<p>2）在多个结点链表中删除中间结点；</p>
+<p>3）在多个链表中删除头结点；</p>
+<p>4）在多个链表总删除尾结点；</p>
+<p>5）在只有一个结点链表中删除唯一结点；</p>
+<h6 id="▉-代码实现"><a href="#▉-代码实现" class="headerlink" title="▉ 代码实现"></a>▉ 代码实现</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义结点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(data)&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">        <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 定义链表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">new</span> Node(<span class="string">'head'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据 value 查找结点</span></span><br><span class="line">    findByValue = <span class="function">(<span class="params">value</span>) =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span> &amp;&amp; currentNode.data !== value)&#123;</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//判断该结点是否找到</span></span><br><span class="line">        <span class="built_in">console</span>.log(currentNode)</span><br><span class="line">        <span class="keyword">return</span> currentNode === <span class="literal">null</span> ? <span class="number">-1</span> : currentNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入元素(指定元素向后插入)</span></span><br><span class="line">    insert = <span class="function">(<span class="params">value,element</span>) =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//先查找该元素</span></span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.findByValue(element);</span><br><span class="line">        <span class="comment">//如果没有找到</span></span><br><span class="line">        <span class="keyword">if</span>(currentNode == <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"未找到插入位置!"</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(value);</span><br><span class="line">        newNode.next = currentNode.next;</span><br><span class="line">        currentNode.next = newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历所有结点</span></span><br><span class="line">    print = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head</span><br><span class="line">        <span class="comment">//如果结点不为空</span></span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(currentNode.data)</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除节点(核心代码)</span></span><br><span class="line">    deleteNode = <span class="function"><span class="params">node</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 判断当前查找的结点是否为 null</span></span><br><span class="line">        <span class="keyword">if</span>(node == <span class="literal">null</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 1、查找删除的结点</span></span><br><span class="line">        <span class="keyword">let</span> d_node = <span class="keyword">this</span>.findByValue(<span class="built_in">parseInt</span>(node.data))</span><br><span class="line">        <span class="comment">// 2、判断该结点是否为尾结点</span></span><br><span class="line">        <span class="keyword">if</span>(d_node.next == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">// 重新遍历链表</span></span><br><span class="line">            <span class="keyword">let</span> p = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">            <span class="keyword">while</span>(current.next !== <span class="literal">null</span>)&#123;</span><br><span class="line">                p = current;</span><br><span class="line">                current = current.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 尾结点置为 null</span></span><br><span class="line">            p.next = <span class="literal">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// 3、将删除结点的值与下一结点交换</span></span><br><span class="line">            d_node.data = d_node.next.data;</span><br><span class="line">            <span class="comment">// 4、删除下一结点</span></span><br><span class="line">            d_node.next = d_node.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试 </span></span><br><span class="line">sortedList1 = <span class="keyword">new</span> LinkedList()</span><br><span class="line">sortedList1.insert(<span class="number">1</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList1.insert(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">sortedList1.insert(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line">sortedList1.insert(<span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line">sortedList1.print();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'------------------------------删除指定结点----------------------------'</span>)</span><br><span class="line"><span class="keyword">let</span> dnode = <span class="keyword">new</span> Node(<span class="string">'1'</span>)</span><br><span class="line">sortedList1.deleteNode(dnode)</span><br><span class="line">sortedList1.print();</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-性能分析-1"><a href="#▉-性能分析-1" class="headerlink" title="▉ 性能分析"></a>▉ 性能分析</h6><ul>
+<li><p>时间复杂度：O（1）。经过上述的方法，删除一个链表的结点，除了删除一个链表的尾结点之外，其他删除节点的时间复杂度为 O（1），获取删除的结点的前一结点，时间复杂度为 O（1），删除节点的时间复杂度为 O（1）。只有删除尾结点才需要遍历整个链表，但大部分删除节点是 O（1）的。使用分析时间复杂度的一个方法摊还分析，将删除节点的时间复杂度平均分到其他大部分情况下，所以平均时间复杂度为 O（1）。</p>
+</li>
+<li><p>空间复杂度：O（1）。不需要额外的内存空间。</p>
+</li>
+</ul>
+<br>
+
+<h4 id="2-2-小结-1"><a href="#2-2-小结-1" class="headerlink" title="2.2 小结"></a>2.2 小结</h4><h6 id="▉-内容考察"><a href="#▉-内容考察" class="headerlink" title="▉ 内容考察"></a>▉ 内容考察</h6><p>1）对单链表的删除基本操作。</p>
+<p>2）对问题的有创新思维的解决能力：能不能将复杂问题的根源用另一种思维去优化。</p>
+<p>3）问题考虑的全面性：考虑到问题出现的各种特殊情况，以及边界问题。</p>
+<br>
+
+<h3 id="3、链表中的倒数第-K-个结点"><a href="#3、链表中的倒数第-K-个结点" class="headerlink" title="3、链表中的倒数第 K 个结点"></a>3、链表中的倒数第 K 个结点</h3><blockquote>
+<p>题目：输入一个链表，输出该链表中倒数第 K 个节点。为符合大多数人的习惯，从 1 开始计数，即链表的尾结点是倒数第一个节点。</p>
+</blockquote>
+<br>
+
+<h4 id="3-1-问题分析与解决"><a href="#3-1-问题分析与解决" class="headerlink" title="3.1 问题分析与解决"></a>3.1 问题分析与解决</h4><h6 id="▉-问题分析-2"><a href="#▉-问题分析-2" class="headerlink" title="▉ 问题分析"></a>▉ 问题分析</h6><p>1）看到这个题的第一想法就是从链表头遍历到链表尾部，然后尾部倒数 k 个数，因为是单链表，所以倒数并不能实现，想法行不通。</p>
+<p>2）那我们只能将思路转移到头结点开始，怎么才能从头结点开始遍历到倒数第 k 个结点呢？大体我们可以得出至少需要遍历两次链表。</p>
+<p>3）上述能不能再优化呢？遍历一次链表就可以完成查找？</p>
+<br>
+
+<h6 id="▉-算法思路-2"><a href="#▉-算法思路-2" class="headerlink" title="▉ 算法思路"></a>▉ 算法思路</h6><p>得出以下几种实现方式：</p>
+<ul>
+<li>两次遍历法</li>
+<li>一次遍历法</li>
+</ul>
+<p>前提条件：</p>
+<p>1）<strong>不要忘记判断单链表是否为环型结构</strong></p>
+<p>两次遍历法：</p>
+<p>1）有一个规律就是链表的长度 n 减去 k 加 1 就是倒数第 k 个数据。所以需要遍历链表得到链表的长度，然后再遍历两次找到链表的倒数第 k 个数据。整个过程需要遍历两遍链表。</p>
+<p>一次遍历法：</p>
+<p>1）那我们就用到双指针，第一个指针指向第一个结点，第二个指针指向 k - 1 个结点，同时向前移动，直到第二个节点指向尾结点位置，第一个节点就指向了倒数第 k 结点。遍历一遍链表就完成查找。</p>
+<br>
+
+<h6 id="▉-测试用例-2"><a href="#▉-测试用例-2" class="headerlink" title="▉ 测试用例"></a>▉ 测试用例</h6><p>1）k 的取值范围（0 &lt; k &lt; n）;输入不在范围内的数据。</p>
+<p>2）输入空链表。</p>
+<p>3）查找倒数第 k 结点为头结点/尾结点。    </p>
+<br>
+
+<h6 id="▉-代码实现-1"><a href="#▉-代码实现-1" class="headerlink" title="▉ 代码实现"></a>▉ 代码实现</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义结点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(data)&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">        <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 定义链表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">new</span> Node(<span class="string">'head'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据 value 查找结点</span></span><br><span class="line">    findByValue = <span class="function">(<span class="params">value</span>) =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span> &amp;&amp; currentNode.data !== value)&#123;</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//判断该结点是否找到</span></span><br><span class="line">        <span class="built_in">console</span>.log(currentNode)</span><br><span class="line">        <span class="keyword">return</span> currentNode === <span class="literal">null</span> ? <span class="number">-1</span> : currentNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入元素(指定元素向后插入)</span></span><br><span class="line">    insert = <span class="function">(<span class="params">value,element</span>) =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//先查找该元素</span></span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.findByValue(element);</span><br><span class="line">        <span class="comment">//如果没有找到</span></span><br><span class="line">        <span class="keyword">if</span>(currentNode == <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"未找到插入位置!"</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(value);</span><br><span class="line">        newNode.next = currentNode.next;</span><br><span class="line">        currentNode.next = newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历所有结点</span></span><br><span class="line">    print = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head</span><br><span class="line">        <span class="comment">//如果结点不为空</span></span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(currentNode.data)</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检测单链表是否为环</span></span><br><span class="line">    checkCircle = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 判断是否为空链表</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.head == <span class="literal">null</span>) <span class="keyword">return</span> fast;</span><br><span class="line">        <span class="comment">// 定义快慢指针</span></span><br><span class="line">        <span class="keyword">let</span> fast = <span class="keyword">this</span>.head.next;</span><br><span class="line">        <span class="keyword">let</span> low = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="comment">//进行循环判断(当前 fast 结点/fast 移动两步后的结点是否为 null)</span></span><br><span class="line">        <span class="keyword">while</span>(fast !== <span class="literal">null</span> &amp;&amp; fast.next !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">// fast 指针向前移动两步</span></span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            <span class="comment">// low 指针向前移动一步</span></span><br><span class="line">            low = low.next;</span><br><span class="line">            <span class="comment">// 如果为环，总有一天会相遇</span></span><br><span class="line">            <span class="keyword">if</span>(fast === low) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查找倒数第 k 结点</span></span><br><span class="line">    findByIndexFromEnd = <span class="function"><span class="params">k</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//判断 k 是否大于0</span></span><br><span class="line">        <span class="keyword">if</span>(k &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="string">'k 的大小不在搜索范围内'</span>;</span><br><span class="line">        <span class="comment">// 检测是否为环</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.checkCircle()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 定义两个指针进行遍历</span></span><br><span class="line">        <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">let</span> fast = current;</span><br><span class="line">        <span class="keyword">let</span> low = current;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt;= k - <span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(fast.next !== <span class="literal">null</span>)&#123;</span><br><span class="line">                fast = fast.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// k 的大小超出链表大小的范围</span></span><br><span class="line">                <span class="keyword">return</span> <span class="string">'k 的大小超出链表的范围'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// low 和 fast 指针同时移动</span></span><br><span class="line">        <span class="keyword">while</span>(fast.next !== <span class="literal">null</span>)&#123;</span><br><span class="line">            fast = fast.next;</span><br><span class="line">            low = low.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 返回倒数第 k 结点</span></span><br><span class="line">        <span class="keyword">return</span> low;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> list = <span class="keyword">new</span> LinkedList();</span><br><span class="line">list.insert(<span class="string">'1'</span>,<span class="string">'head'</span>);</span><br><span class="line"><span class="comment">// list.insert('2','1');</span></span><br><span class="line"><span class="comment">// list.insert('3','2');</span></span><br><span class="line"><span class="comment">// list.insert('4','3');</span></span><br><span class="line"><span class="comment">// list.insert('5','4');</span></span><br><span class="line"><span class="comment">// list.insert('6','5');</span></span><br><span class="line">list.print();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'-------------------查找倒数第 k 结点----------------'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list.findByIndexFromEnd(<span class="number">8</span>));</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-性能分析-2"><a href="#▉-性能分析-2" class="headerlink" title="▉ 性能分析"></a>▉ 性能分析</h6><p>两次遍历法：</p>
+<ul>
+<li>时间复杂度：O（k*n）。当 k 趋近于 n 时，最坏时间复杂度为 O（n^2）。</li>
+<li>空间复杂度：O（1）。不需要额外的内存空间。</li>
+</ul>
+<p>一次遍历法：</p>
+<ul>
+<li>时间复杂度：O（n）。只需要遍历一次单链表，所以时间复杂度为O（n）。</li>
+<li>空间复杂度：O（1）。不需要额外的内存空间。</li>
+</ul>
+<br>
+
+<h4 id="3-2-小结"><a href="#3-2-小结" class="headerlink" title="3.2 小结"></a>3.2 小结</h4><h6 id="▉-内容考察-1"><a href="#▉-内容考察-1" class="headerlink" title="▉ 内容考察"></a>▉ 内容考察</h6><p>1）对单链表的基本操作。</p>
+<p>2）代码的全面性、鲁棒性。</p>
+<br>
+
+<h6 id="▉-注意事项"><a href="#▉-注意事项" class="headerlink" title="▉ 注意事项"></a>▉ 注意事项</h6><p>1）当我们用一个指针不能解决时，想一想两个指针能否解决？</p>
+<br>
+
+<h6 id="▉-相关题目"><a href="#▉-相关题目" class="headerlink" title="▉ 相关题目"></a>▉ 相关题目</h6><p>1）求中间结点</p>
+<p>2）求倒数第 k 个结点</p>
+<p>3）检测环的存在</p>
+<br>
+
+<h3 id="4、反转链表"><a href="#4、反转链表" class="headerlink" title="4、反转链表"></a>4、反转链表</h3><blockquote>
+<p>题目：定义一个函数，输入一个链表的头结点，反转该链表并输出反转链表的头结点。</p>
+</blockquote>
+<br>
+
+<h4 id="4-1-问题分析与解决"><a href="#4-1-问题分析与解决" class="headerlink" title="4.1 问题分析与解决"></a>4.1 问题分析与解决</h4><h6 id="▉-问题分析-3"><a href="#▉-问题分析-3" class="headerlink" title="▉ 问题分析"></a>▉ 问题分析</h6><p>1）反转链表的我们第一能够想到的方法就是最常用的方法，声明三个指针，把头结点变为尾结点，然后下一结点拼接到尾结点的头部，一次类推。说白了就是就是直接将链表指针反转就可以实现反转链表。</p>
+<br>
+
+<h6 id="▉-算法思路-3"><a href="#▉-算法思路-3" class="headerlink" title="▉ 算法思路"></a>▉ 算法思路</h6><p>1）定义三个指针，分别为 Pnext、pre、current，current 存储当前结点， pre 指向反转好的结点的头结点，Pnext 存储下一结点信息。</p>
+<p>2）判断当前结点是否可以反转（是否为空链表或链表大于 1 个结点）?</p>
+<p><strong>步骤：</strong></p>
+<p>1）Pnext 指针存储下一结点 。</p>
+<p>2）当前结点的 next 结点是否为 null (为 null 的话当前结点就是最后的一个结点)，如果为 null，将当前节点赋值为 head 头指针（断裂处）。</p>
+<p>3）将 pre 指针指向的结点赋值当前节点 current 的下一结点 next。</p>
+<p>4）然后让 pre 指针指向当前节点 current。</p>
+<p>5）current 继续遍历, 当前节点指向 current 指向 Pnext。</p>
+<p><strong>递归法（重点分析）：</strong></p>
+<p>1）先确定终止条件：当下一结点为  null  时，返回当前节点；</p>
+<p>2）判断当前的链表是否为  null；</p>
+<p>3）递归找到尾结点，将其存储为头结点。</p>
+<p>4）此时递归的层次是第二层递归，所以要设置为头结点的下一结点就是当前第二层结点，并且将第二节点的下一结点设置为 bull。</p>
+<br>
+
+<h6 id="▉-测试用例-3"><a href="#▉-测试用例-3" class="headerlink" title="▉ 测试用例"></a>▉ 测试用例</h6><p>1）链表是空链表。</p>
+<p>2）当前链表的长度小于等于 1。</p>
+<p>3）输入长度大于 1 的链表。</p>
+<br>
+
+<h6 id="▉-代码实现-2"><a href="#▉-代码实现-2" class="headerlink" title="▉ 代码实现"></a>▉ 代码实现</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseList = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判断当前链表是否为空链表</span></span><br><span class="line">    <span class="keyword">if</span>(head == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义三个指针</span></span><br><span class="line">    <span class="keyword">let</span> [current,prev,next] = [head,<span class="literal">null</span>,<span class="literal">null</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(current !== <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="comment">//1、存储下一结点</span></span><br><span class="line">        next = current.next;</span><br><span class="line">        <span class="keyword">if</span>(next == <span class="literal">null</span>)&#123;</span><br><span class="line">            head = current;</span><br><span class="line">        &#125;</span><br><span class="line">        current.next = prev;</span><br><span class="line">        prev = current;</span><br><span class="line">        current = next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-递归法"><a href="#▉-递归法" class="headerlink" title="▉ 递归法"></a>▉ 递归法</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> reverseList = <span class="function">(<span class="params">head</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//如果链表为空或者链表中只有一个元素</span></span><br><span class="line">    <span class="keyword">if</span>(head == <span class="literal">null</span> || head.next == <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//先反转后面的链表，走到链表的末端结点</span></span><br><span class="line">        <span class="keyword">let</span> newhead = reverseList(head.next);</span><br><span class="line">        <span class="comment">//再将当前节点设置为后面节点的后续节点</span></span><br><span class="line">        head.next.next = head;</span><br><span class="line">        head.next = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> newhead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-性能分析-3"><a href="#▉-性能分析-3" class="headerlink" title="▉ 性能分析"></a>▉ 性能分析</h6><ul>
+<li>时间复杂度：O(n)。只需遍历整个链表就可以完成反转，时间复杂度为 O(n)。</li>
+<li>空间复杂度：O(1)。只需要常量级的空间，空间复杂度为 O(1)。</li>
+</ul>
+<br>
+
+<h4 id="4-2-小结"><a href="#4-2-小结" class="headerlink" title="4.2 小结"></a>4.2 小结</h4><h6 id="▉-内容考察-2"><a href="#▉-内容考察-2" class="headerlink" title="▉ 内容考察"></a>▉ 内容考察</h6><p>1）对单链表的基本操作。</p>
+<p>2）对指针操作顺序的逻辑性考察。</p>
+<p>3）考察思维的全面性以及代码的鲁棒性。</p>
+<br>
+
+<h6 id="▉-注意事项-1"><a href="#▉-注意事项-1" class="headerlink" title="▉ 注意事项"></a>▉ 注意事项</h6><p>1）边界条件。</p>
+<p>2）写代码之前想好测试用例，写完代码一一验证测试用例的正确性。</p>
+<br>
+
+<h3 id="5、合并两个有序链表"><a href="#5、合并两个有序链表" class="headerlink" title="5、合并两个有序链表"></a>5、合并两个有序链表</h3><blockquote>
+<p>题目：输入两个递增排序的链表，合并这两个链表并使新链表中的节点仍然是递增排序的。</p>
+</blockquote>
+<br>
+
+<h4 id="5-1-问题分析与解决"><a href="#5-1-问题分析与解决" class="headerlink" title="5.1 问题分析与解决"></a>5.1 问题分析与解决</h4><h6 id="▉-问题分析-4"><a href="#▉-问题分析-4" class="headerlink" title="▉ 问题分析"></a>▉ 问题分析</h6><p>1）合并两个链表，经常犯的错误就是没有弄清除指针的指向，导致链表合并的时候断裂以及代码全面性考虑的不全，也就是代码的鲁棒性存在问题。</p>
+<p>2）递归。每次都要比较两个结点大小，是否可以使用递归来解决呢？</p>
+<br>
+
+<h6 id="▉-算法思路-4"><a href="#▉-算法思路-4" class="headerlink" title="▉ 算法思路"></a>▉ 算法思路</h6><p><strong>一般解决法：</strong></p>
+<p>1）合并两个链表，首先需要两个指针，分别指向两个链表。</p>
+<p>2）比较两个指针指向结点元素的大小，小的结点添加到新链表，然后指针向后移动继续比较。</p>
+<p>3）直到其中一个链表没有结点了，另一个链表存在结点，将剩余的结点加入到新链表的尾部，完成合并。</p>
+<p><strong>递归法：（满足递归的三个条件）</strong></p>
+<p>比较当前结点大小先比较下一结点的大小。</p>
+<p>1）结点之间的比较可以分的子问题为每个节点的比较。</p>
+<p>2）终止条件：其中一个链表结点为 null。</p>
+<p>3）子问题和总问题具有相同的解决思路。</p>
+<br>
+
+<h6 id="▉-测试用例-4"><a href="#▉-测试用例-4" class="headerlink" title="▉ 测试用例"></a>▉ 测试用例</h6><p>1）输入两个空链表。</p>
+<p>2）其中一个链表为空链表。</p>
+<p>3）输入两个完整的链表。</p>
+<br>
+
+<h6 id="▉-代码实现-3"><a href="#▉-代码实现-3" class="headerlink" title="▉ 代码实现"></a>▉ 代码实现</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 功能:两个有序链表的合并</span></span><br><span class="line"><span class="comment">// 步骤:</span></span><br><span class="line"><span class="comment">// 1、判断两个链表是否为 null,并将链表赋予临时变量</span></span><br><span class="line"><span class="comment">// 2、声明合并链表,通过 currentNode 指向当前结点</span></span><br><span class="line"><span class="comment">// 3、两个链表比较大小,数值小的添加到合并链表中,合并链表进行指针移动</span></span><br><span class="line"><span class="comment">// 4、将链表剩余数据添加到合并链表后边</span></span><br><span class="line"><span class="keyword">const</span> mergeSortList = <span class="function">(<span class="params">listA,listB</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//判断链表是否为空</span></span><br><span class="line">    <span class="keyword">if</span>(listA === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(listB === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> a = listA;</span><br><span class="line">    <span class="keyword">let</span> b = listB;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//声明合并链表,通过 currentNode 指向当前结点</span></span><br><span class="line">    <span class="keyword">let</span> resultList = <span class="literal">undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//两个链表比较大小,数值小的添加到合并链表中,合并链表进行指针移动</span></span><br><span class="line">    <span class="keyword">if</span> (a.data &lt; b.data) &#123;</span><br><span class="line">        resultList = a</span><br><span class="line">        a = a.next</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        resultList = b</span><br><span class="line">        b = b.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> currentNode = resultList;</span><br><span class="line">    <span class="keyword">while</span> (a !== <span class="literal">null</span> &amp;&amp; b !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a.data &lt; b.data) &#123;</span><br><span class="line">            currentNode.next = a</span><br><span class="line">            a = a.next</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            currentNode.next = b</span><br><span class="line">            b = b.next</span><br><span class="line">        &#125;</span><br><span class="line">        currentNode = currentNode.next</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将链表剩余数据添加到合并链表后边 </span></span><br><span class="line">    <span class="keyword">if</span>(a !== <span class="literal">null</span>)&#123;</span><br><span class="line">        currentNode.next = a;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        currentNode.next = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//返回合并链表</span></span><br><span class="line">    <span class="keyword">return</span> resultList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-递归实现"><a href="#▉-递归实现" class="headerlink" title="▉ 递归实现"></a>▉ 递归实现</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> mergeTwoLists = <span class="function"><span class="keyword">function</span>(<span class="params">l1, l2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//终止条件</span></span><br><span class="line">    <span class="keyword">if</span>(l1 == <span class="literal">null</span>) <span class="keyword">return</span> l2;</span><br><span class="line">    <span class="keyword">if</span>(l2 == <span class="literal">null</span>) <span class="keyword">return</span> l1;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断数值大小递归</span></span><br><span class="line">    <span class="keyword">if</span>(l1.val &lt; l2.val)&#123;</span><br><span class="line">        result = l1;</span><br><span class="line">        result.next = mergeTwoLists(l1.next,l2);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        result = l2;</span><br><span class="line">        result.next = mergeTwoLists(l2.next,l1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回结果</span></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-代码测试"><a href="#▉-代码测试" class="headerlink" title="▉ 代码测试"></a>▉ 代码测试</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//定义结点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(data)&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">        <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义链表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">new</span> Node(<span class="string">'head'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据 value 查找结点</span></span><br><span class="line">    findByValue = <span class="function">(<span class="params">value</span>) =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span> &amp;&amp; currentNode.data !== value)&#123;</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//判断该结点是否找到</span></span><br><span class="line">        <span class="built_in">console</span>.log(currentNode)</span><br><span class="line">        <span class="keyword">return</span> currentNode === <span class="literal">null</span> ? <span class="number">-1</span> : currentNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入元素(指定元素向后插入)</span></span><br><span class="line">    insert = <span class="function">(<span class="params">value,element</span>) =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//先查找该元素</span></span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.findByValue(element);</span><br><span class="line">        <span class="comment">//如果没有找到</span></span><br><span class="line">        <span class="keyword">if</span>(currentNode == <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"未找到插入位置!"</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(value);</span><br><span class="line">        newNode.next = currentNode.next;</span><br><span class="line">        currentNode.next = newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历所有结点</span></span><br><span class="line">    print = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> currentNode = <span class="keyword">this</span>.head</span><br><span class="line">        <span class="comment">//如果结点不为空</span></span><br><span class="line">        <span class="keyword">while</span>(currentNode !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(currentNode.data)</span><br><span class="line">            currentNode = currentNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 合并两个链表</span></span><br><span class="line"><span class="keyword">var</span> mergeSortList = <span class="function"><span class="keyword">function</span>(<span class="params">l1, l2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//终止条件</span></span><br><span class="line">    <span class="keyword">if</span>(l1 == <span class="literal">null</span>) <span class="keyword">return</span> l2;</span><br><span class="line">    <span class="keyword">if</span>(l2 == <span class="literal">null</span>) <span class="keyword">return</span> l1;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断数值大小递归</span></span><br><span class="line">    <span class="keyword">if</span>(l1.val &lt; l2.val)&#123;</span><br><span class="line">        result = l1;</span><br><span class="line">        result.next = mergeSortList(l1.next,l2);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        result = l2;</span><br><span class="line">        result.next = mergeSortList(l2.next,l1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回结果</span></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line">sortedList1 = <span class="keyword">new</span> LinkedList()</span><br><span class="line">sortedList1.insert(<span class="number">9</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList1.insert(<span class="number">8</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList1.insert(<span class="number">7</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList1.insert(<span class="number">6</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList1.print();</span><br><span class="line">sortedList2 = <span class="keyword">new</span> LinkedList()</span><br><span class="line">sortedList2.insert(<span class="number">21</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList2.insert(<span class="number">20</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList2.insert(<span class="number">19</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList2.insert(<span class="number">18</span>, <span class="string">'head'</span>)</span><br><span class="line">sortedList2.print();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'----------------合并两个有序的链表----------------'</span>)</span><br><span class="line"><span class="keyword">let</span> resultList = mergeSortList(sortedList1.head.next,sortedList2.head.next)</span><br><span class="line"><span class="keyword">while</span> (resultList !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(resultList.date);</span><br><span class="line">    resultList = resultList.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h6 id="▉-性能分析-4"><a href="#▉-性能分析-4" class="headerlink" title="▉ 性能分析"></a>▉ 性能分析</h6><ul>
+<li>时间复杂度：O（n）。n 为较短的链表的长度。</li>
+<li>空间复杂度：O（n+m）。需要额外的 n+m(两个链表长度之和) 大小的空间来存储合并的结点。</li>
+</ul>
+<br>
+
+<h4 id="5-2-小结"><a href="#5-2-小结" class="headerlink" title="5.2 小结"></a>5.2 小结</h4><h6 id="▉-内容考察-3"><a href="#▉-内容考察-3" class="headerlink" title="▉ 内容考察"></a>▉ 内容考察</h6><p>1）对链表的基本操作。</p>
+<p>2）写代码考虑问题的全面性和鲁棒性。</p>
+<br>
+
+<h6 id="▉-注意事项-2"><a href="#▉-注意事项-2" class="headerlink" title="▉ 注意事项"></a>▉ 注意事项</h6><p>1）递归实现，注意递归解决问题的三个缺点。</p>
+<ul>
+<li>堆栈溢出</li>
+<li>重复数据</li>
+<li>高空间复杂度</li>
+</ul>
+<br>
+
+<h2 id="三、LeetCode-加强练习阶段（阶段三）"><a href="#三、LeetCode-加强练习阶段（阶段三）" class="headerlink" title="三、LeetCode 加强练习阶段（阶段三）"></a>三、LeetCode 加强练习阶段（阶段三）</h2><blockquote>
+<p>如果你对基本的链表操作已经掌握，想进一步提高对链表熟练度的操作，可以练习一下 LeetCode 题目。每道题我都做了详细的解析，如：问题分析、算法思路、代码实现、考查内容等，有关链表的相关题目会不断更新……</p>
+</blockquote>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/linked-list-cycle/" target="_blank" rel="noopener">环形链表 I</a> (<a href="https://github.com/luxiangqiang/JS-LeetCode/blob/master/LinkedListCycle.md" target="_blank" rel="noopener">题目解析</a> )</li>
+<li><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/" target="_blank" rel="noopener">环形链表 II</a> (<a href="https://github.com/luxiangqiang/JS-LeetCode/blob/master/LinkedListCycle2.md" target="_blank" rel="noopener">题目解析</a> )</li>
+<li><a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/" target="_blank" rel="noopener">合并K个排序链表</a> (<a href="https://github.com/luxiangqiang/JS-LeetCode/blob/master/MergekSortedLists.md" target="_blank" rel="noopener">题目解析</a> )</li>
+</ul>
+<br>
+
+<h2 id="四、链表总结"><a href="#四、链表总结" class="headerlink" title="四、链表总结"></a>四、链表总结</h2><blockquote>
+<p>做了大量有关链表的题型之后，对链表的操作做一个总结和复盘，对链表有一个整体的把握和重新的认识。</p>
+</blockquote>
+<br>
+
+<h4 id="1、结构上"><a href="#1、结构上" class="headerlink" title="1、结构上"></a>1、结构上</h4><p>① 存储链表的内存空间是不连续的，所有需要使用指针将这些零碎内存空间连接起来，导致需要通过指针来进行操作，这也是为什么链表中大多数都是关于指针的操作的原因。</p>
+<p>② 链表在结构上有两个特殊的地方就是链表头和链表尾，很多操作都要对链表头和链表尾进行特殊处理，所以我们可以借助哨兵思想（在链表头添加一个哨兵），这样带头的链表可以简化问题的解决。</p>
+<br>
+
+<h4 id="2、操作上"><a href="#2、操作上" class="headerlink" title="2、操作上"></a>2、操作上</h4><p>① 递归：链表中的很多操作都是可以用递归来进行解决的，因为链表的每个结点都有着相同的结构，再加上解决的问题可以分解为子问题进行解决。所以在链表中递归编程技巧还是非常常用的。如：从尾到头打印链表、合并两个有序链表、反转链表等。</p>
+<p>② 双指针：链表中大部分都是进行指针操作，链表属于线性表结构（形如一条线的结构），很多问题可以使用双指针来解决，也是非常常用到的。如：查找倒数第K 结点、求链表的中间结点等。</p>
+<br>
+
+<h4 id="3、性能上"><a href="#3、性能上" class="headerlink" title="3、性能上"></a>3、性能上</h4><p>① 链表正是因为存储空间不连续，对 CPU 缓存不友好，随时访问只能从头遍历链表，时间复杂度为 O（n），但是链表的这种结构也有个好处就是。可以动态的申请内存空间，不需要提前申请。</p>
+<p>② 指针的存储是需要额外的内存空间的，如果存储的数据远大于存储指针的内存空间，可以进行忽略。</p>
+<hr>
+
+<p><strong>作者：</strong>小鹿</p>
+<p><strong>座右铭：</strong>追求平淡不平凡，一生追求做一个不甘平凡的码农!</p>
+<p><strong>本文首发于 Github ，转载请说明出处：</strong><a href="https://github.com/luxiangqiang/Blog/blob/master/articel/数据结构与算法系列/数据结构与算法之链表系列[题型篇].md" target="_blank" rel="noopener">https://github.com/luxiangqiang/Blog/blob/master/articel/数据结构与算法系列/数据结构与算法之链表系列[题型篇].md</a></p>
+<p><strong>个人公众号：「一个不甘平凡的码农」。</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数据结构与算法之二叉树系列[题型篇]</title>
+    <url>/2020/02/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91%E7%B3%BB%E5%88%97%5B%E9%A2%98%E5%9E%8B%E7%AF%87%5D/</url>
+    <content><![CDATA[<h2 id="写在前边"><a href="#写在前边" class="headerlink" title="写在前边"></a>写在前边</h2><p>不知道你有没有这种困惑，虽然刷了很多算法题，当我去面试的时候，面试官让你手写一个算法，可能你对此算法很熟悉，知道实现思路，但是总是不知道该在什么地方写，而且很多边界条件想不全面，一紧张，代码写的乱七八糟。如果遇到没有做过的算法题，思路也不知道从何寻找，那么这篇文章就主要为你解决这几个问题。</p>
+<p>《剑指 offer》是准备数据结构与算法面试的一本好书，里边很多面试手写算法很多的注意的问题，但是基本都是用 C++ 实现的，书中每章节的分类都是按照性能和消耗以及手写代码的注意的几大点进行了分类，针对每个不同的点，进行数据结构与算法的混合实现。</p>
+<p>二遍刷题，发现了还可以根据自身情况进行整理和分类。全部代码是用 JS 书写，都经过 Leetcode 标准测试（小部分Leetcode 没有的题目），对所有的算法题的特点进行总结分类，手写算法中，如何考虑到全部的边界条件；如果快速多种思路解决，如何将思路快速的转化为代码，这是这一篇重点分享的地方。</p>
+<p>二叉树题目共有 11 题，我把这 11 题书中对实现方法和思路有详细的讲解，但是对于个人来说，以后遇到陌生的二叉树的题目怎么进行解决，通过对 11 个题的分析、整理，得出以下几个步骤，首先先来看这 11 个二叉树经典算法题。</p>
+<p><strong>PS：</strong>如果你已经做过这几道题，而且能够顺利的手写出来，不妨滑到最底部，希望最后的二叉树思路、测试用例以及代码编写的总结对你在面试中有所帮助（这篇文章精华所在）。</p>
+<h3 id="一、面试题7：重建二叉树"><a href="#一、面试题7：重建二叉树" class="headerlink" title="一、面试题7：重建二叉树"></a>一、面试题7：重建二叉树</h3><blockquote>
+<p>已知前序遍历为{1,2,4,7,3,5,6,8}，中序遍历为{4,7,2,1,5,3,8,6}，它的二叉树是怎么样的？</p>
+</blockquote>
+<h4 id="1、思路"><a href="#1、思路" class="headerlink" title="1、思路"></a>1、思路</h4><p>根据前、中序遍历的特点，（根左右、左根右），先根据前序遍历确定根节点，然后在中序遍历知道该根节点的左右树的数量，反推出前序遍历中左子树的结点有哪些。根据该思路进行递归即可完成二叉树的重建。</p>
+<h4 id="2、测试用例"><a href="#2、测试用例" class="headerlink" title="2、测试用例"></a>2、测试用例</h4><ul>
+<li><p>完全二叉树、非完全二叉树 —— 普通测试。</p>
+</li>
+<li><p>只有左子节点二叉树，只有右子节点、只有一个结点的二叉树 —— 特殊二叉树测试。</p>
+</li>
+<li><p>空树、前序和中序不匹配 —— 输入测试。</p>
+</li>
+</ul>
+<h4 id="3、代码实现"><a href="#3、代码实现" class="headerlink" title="3、代码实现"></a>3、代码实现</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="number">1</span><span class="comment">// 定义结点</span></span><br><span class="line"> <span class="number">2</span><span class="comment">// class TreeNode&#123;</span></span><br><span class="line"> <span class="number">3</span><span class="comment">//     constructor(data)&#123;</span></span><br><span class="line"> <span class="number">4</span><span class="comment">//         this.data = data;</span></span><br><span class="line"> <span class="number">5</span><span class="comment">//         this.left = null;</span></span><br><span class="line"> <span class="number">6</span><span class="comment">//         this.right = null;</span></span><br><span class="line"> <span class="number">7</span><span class="comment">//     &#125; </span></span><br><span class="line"> <span class="number">8</span><span class="comment">// &#125;</span></span><br><span class="line"> <span class="number">9</span></span><br><span class="line"><span class="number">10</span><span class="comment">// 参数：前序遍历数组 ~ 中序遍历数组</span></span><br><span class="line"><span class="number">11</span><span class="keyword">const</span> reConstructBinaryTree = <span class="function">(<span class="params">pre, vin</span>)=&gt;</span>&#123;</span><br><span class="line"><span class="number">12</span>    <span class="comment">// 判断前序数组和中序数组是否为空</span></span><br><span class="line"><span class="number">13</span>    <span class="keyword">if</span>(!pre || pre.length === <span class="number">0</span> || !vin || vin.length === <span class="number">0</span>)&#123;</span><br><span class="line"><span class="number">14</span>        <span class="keyword">return</span>;</span><br><span class="line"><span class="number">15</span>    &#125;</span><br><span class="line"><span class="number">16</span>    <span class="comment">// 新建二叉树的根节点</span></span><br><span class="line"><span class="number">17</span>    <span class="keyword">var</span> treeNode = &#123;</span><br><span class="line"><span class="number">18</span>        val: pre[<span class="number">0</span>]</span><br><span class="line"><span class="number">19</span>    &#125;</span><br><span class="line"><span class="number">20</span>    <span class="comment">// 查找中序遍历中的根节点</span></span><br><span class="line"><span class="number">21</span>    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; pre.length; i++) &#123;</span><br><span class="line"><span class="number">22</span>        <span class="keyword">if</span> (vin[i] === pre[<span class="number">0</span>]) &#123;</span><br><span class="line"><span class="number">23</span>            <span class="comment">// 将左子树的前中序遍历分割开</span></span><br><span class="line"><span class="number">24</span>            treeNode.left = reConstructBinaryTree(pre.slice(<span class="number">1</span>, i+<span class="number">1</span>), vin.slice(<span class="number">0</span>, i));</span><br><span class="line"><span class="number">25</span>            <span class="comment">// 将右子树的前中序遍历分割开</span></span><br><span class="line"><span class="number">26</span>            treeNode.right = reConstructBinaryTree(pre.slice(i+<span class="number">1</span>),vin.slice(i+<span class="number">1</span>));</span><br><span class="line"><span class="number">27</span>        &#125;</span><br><span class="line"><span class="number">28</span>    &#125;</span><br><span class="line"><span class="number">29</span>    <span class="comment">// 返回该根节点</span></span><br><span class="line"><span class="number">30</span>    <span class="keyword">return</span> treeNode;</span><br><span class="line"><span class="number">31</span>&#125;</span><br><span class="line"><span class="number">32</span></span><br><span class="line"><span class="number">33</span><span class="keyword">let</span> pre = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>];</span><br><span class="line"><span class="number">34</span><span class="keyword">let</span> vin = [<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">6</span>];</span><br><span class="line"><span class="number">35</span><span class="built_in">console</span>.log(reConstructBinaryTree(pre,vin));</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="二、面试题8：二叉树的下一节点"><a href="#二、面试题8：二叉树的下一节点" class="headerlink" title="二、面试题8：二叉树的下一节点"></a>二、<strong>面试题8：二叉树的下一节点</strong></h3><blockquote>
+<p>给定一个二叉树的节点，如何找出中序遍历的下一节点。有两个指向左右子树的指针，还有一个指向父节点的指针。</p>
+</blockquote>
+<h4 id="一、思路"><a href="#一、思路" class="headerlink" title="一、思路"></a>一、思路</h4><p>求中序遍历的下一节点，就要分各种情况（明确中序遍历下一结点在二叉树中的位置有哪些），然后对某种情况详细分析。</p>
+<p>下一结点可能存在的情况：</p>
+<ul>
+<li>有右子节点<ul>
+<li>右子节点有无左子节点<ul>
+<li>无 —— 右子节点就是当前结点下一节</li>
+<li>有 —— 递归寻找右子节点的左子节点就是下一节点</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>无右子节点<ul>
+<li>无父节点 —— 无下一结点</li>
+<li>有父节点<ul>
+<li>当前结点作为父节点的左子节点 —— 下一结点为父节点</li>
+<li>当前结点作为父节点的右子节点 —— 向父节点递归寻找作为左子节点的结点就是下一节点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、测试用例"><a href="#二、测试用例" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>普通测试 —— 完全二叉树、非完全二叉树</li>
+<li>特殊测试 —— 只要左子节点的二叉树、只有右子节点的二叉树、只有一个结点</li>
+<li>输入测试 —— 空节点</li>
+</ul>
+<h4 id="三、代码实现"><a href="#三、代码实现" class="headerlink" title="三、代码实现"></a>三、代码实现</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> getNextNode = <span class="function">(<span class="params">pNode</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 判断该结点是否为 null</span></span><br><span class="line">    <span class="keyword">if</span>(pNode == <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前结点有右子树且左子树</span></span><br><span class="line">    <span class="keyword">if</span>(pNode.right !== <span class="literal">null</span>)&#123;</span><br><span class="line">        pNode = pNode.right;</span><br><span class="line">        <span class="comment">// 判断右子树是否有左子树</span></span><br><span class="line">        <span class="keyword">while</span>(pNode.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">            pNode = pNode.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pNode;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 判断当前结点是否存在父节点(如果为空,没有下一结点)</span></span><br><span class="line">        <span class="keyword">while</span>(pNode.next !== <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pNode == pNode.next.left)&#123;</span><br><span class="line">                <span class="keyword">return</span> pNode.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                pNode = pNode.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 没有下一结点</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三、面试题26：树的子结构"><a href="#三、面试题26：树的子结构" class="headerlink" title="三、面试题26：树的子结构"></a>三、面试题26：树的子结构</h3><blockquote>
+<p>输入两棵二叉树 A 和 B，判断 B 是不是 A 的子结构。</p>
+</blockquote>
+<h4 id="一、思路-1"><a href="#一、思路-1" class="headerlink" title="一、思路"></a>一、思路</h4><p>通过判断两棵树的根节点否相同，如果相同，则递归判断树剩余的结点是否相同。如果不相同，则递归树的左右子节点进行对比找到相同的根节点。</p>
+<h4 id="二、测试用例-1"><a href="#二、测试用例-1" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>是子结构、不是子结构 —— 普通测试。</li>
+<li>只有左子节点、只有右子节点、只有一个结点 —— 特殊测试。</li>
+<li>空树 —— 输入测试。</li>
+</ul>
+<h4 id="三、代码实现-1"><a href="#三、代码实现-1" class="headerlink" title="三、代码实现"></a>三、代码实现</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> TreeConstrutor = <span class="function">(<span class="params">nodeA, nodeB</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 判断输入是否为 null</span></span><br><span class="line">    <span class="comment">// nodeA 为 null 不会有子结构</span></span><br><span class="line">    <span class="keyword">if</span>(nodeA == <span class="literal">null</span>)&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="comment">// 如果 nodeB 为 null,代表所有子结构比较完成</span></span><br><span class="line">    <span class="keyword">if</span>(nodeB == <span class="literal">null</span>)&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果根节点相同，则进行子结构全部的验证,返回验证的结果</span></span><br><span class="line">    <span class="keyword">if</span>(nodeA.data === nodeB.data)&#123;</span><br><span class="line">       result = match(nodeA, nodeB)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果根节点不相同，继续递归遍历查找相同的根节点</span></span><br><span class="line">    <span class="keyword">return</span> TreeConstrutor(nodeA.left, nodeB) || TreeConstrutor(nodeA.right, nodeB)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配根节点相同的子结构</span></span><br><span class="line"><span class="keyword">const</span> match = <span class="function">(<span class="params">nodeA, nodeB</span>)=&gt;</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(nodeA == <span class="literal">null</span>)&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">if</span>(nodeB == <span class="literal">null</span>)&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="comment">// 判断匹配的当前结点是否相同</span></span><br><span class="line">     <span class="keyword">if</span>(nodeA.data == nodeB.data)&#123;</span><br><span class="line">         <span class="comment">// 递归匹配其他子节点</span></span><br><span class="line">    	<span class="keyword">return</span> match(nodeA.left, nodeB.left) &amp;&amp; match(nodeA.right, nodeB.right);</span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果不相同</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="四、面试题27：二叉树的镜像"><a href="#四、面试题27：二叉树的镜像" class="headerlink" title="四、面试题27：二叉树的镜像"></a>四、<strong>面试题27：二叉树的镜像</strong></h3><blockquote>
+<p>请完成一个函数，如果一个二叉树，该函数输出它的镜像。</p>
+</blockquote>
+<h4 id="一、思路-2"><a href="#一、思路-2" class="headerlink" title="一、思路"></a>一、思路</h4><p>根节点的左右子节点相互交换，继续递归遍历，将子节点的左右结点进行交换，知道遇到叶子节点。</p>
+<h4 id="二、测试用例-2"><a href="#二、测试用例-2" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>普通二叉树 —— 普通测试</li>
+<li>只有左子节点、只有右子节点、只有一个结点 —— 特殊测试</li>
+<li>空树 —— 输入测试</li>
+</ul>
+<h4 id="三、代码实现-2"><a href="#三、代码实现-2" class="headerlink" title="三、代码实现"></a>三、代码实现</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> insert = <span class="function">(<span class="params">root</span>)=&gt;</span>&#123;</span><br><span class="line">	<span class="comment">// 判断根节点是否为 null</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">null</span>)&#123;</span><br><span class="line">     	<span class="keyword">return</span>;  </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 进行结点交换</span></span><br><span class="line">    Let tempNode = root.left;</span><br><span class="line">    root.left = root.right;</span><br><span class="line">    root.right = tempNode;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递归遍历剩余的子节点</span></span><br><span class="line">    insert(root.left);</span><br><span class="line">    insert(root.right);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 返回根节点</span></span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="五、面试题28：对称二叉树"><a href="#五、面试题28：对称二叉树" class="headerlink" title="五、面试题28：对称二叉树"></a>五、<strong>面试题28：对称二叉树</strong></h3><h4 id="一、思路-3"><a href="#一、思路-3" class="headerlink" title="一、思路"></a>一、思路</h4><p>1、首先，观察一个对称的二叉树有什么特点？</p>
+<ul>
+<li>结构上：在结构上实对称的，某一节点的左子节点和某一节点的右子节点对称。</li>
+<li>规律上：我们如果进行前序遍历（根、左、右），然后对前序遍历进行改进（根、右、左），如果是对称的二叉树，他们的遍历结果是相同的。</li>
+</ul>
+<p>2、考虑其他情况</p>
+<ul>
+<li>结点数量不对称</li>
+<li>结点值不对称</li>
+</ul>
+<h4 id="二、测试用例-3"><a href="#二、测试用例-3" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li><p>对称二叉树、不对称二叉树（结点数量不对称、结点结构不对称） —— 普通测试</p>
+</li>
+<li><p>所有结点值都相同的二叉树 —— 特殊测试</p>
+</li>
+<li><p>空二叉树 —— 输入测试</p>
+</li>
+</ul>
+<h4 id="三、代码编写"><a href="#三、代码编写" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> isSymmetric = <span class="function">(<span class="params">root</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 判断二叉树是否为 null —— 输入测试，                                                     	  if(root == null)&#123;</span></span><br><span class="line">         <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 判断输入的二叉树,从根节点开始判断是否是对称二叉树</span></span><br><span class="line">	<span class="keyword">var</span> Symmetric = <span class="function">(<span class="params">lNode, rNode</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 判断左右结点是否都为 null</span></span><br><span class="line">        <span class="keyword">if</span>(lNode == <span class="literal">null</span> &amp;&amp; rNode == <span class="literal">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="comment">// 判断其中一个为 null 另一个不是 null</span></span><br><span class="line">        <span class="keyword">if</span>(lNode == <span class="literal">null</span> &amp;&amp; rNode !== <span class="literal">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line">        <span class="keyword">if</span>(lNode !== <span class="literal">null</span> &amp;&amp; rNode == <span class="literal">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">         &#125;</span><br><span class="line">        <span class="comment">// 判断两个结点的值是否相同</span></span><br><span class="line">        <span class="keyword">if</span>(lNode.val !== rNode.val)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果相同，继续递归判断其他的结点</span></span><br><span class="line">        <span class="keyword">return</span> Symmetric(lNode.left,rNode.right) &amp;&amp; Symmetric(lNode.right,rNode.left)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Symmetric(root.left,root.right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="六、面试题32：从上到下打印二叉树"><a href="#六、面试题32：从上到下打印二叉树" class="headerlink" title="六、面试题32：从上到下打印二叉树"></a>六、面试题32：从上到下打印二叉树</h3><blockquote>
+<p>从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。（按层遍历二叉树）</p>
+</blockquote>
+<h4 id="一、思路-4"><a href="#一、思路-4" class="headerlink" title="一、思路"></a>一、思路</h4><p>从根节点开始按层遍历打印结点（自左往右），下一层的遍历是上一层的字节点，但是我们发现想要获取到上层结点的子节点时，上层的父节点已经遍历过去可，想要在获取到，必须存储父节点。然后下层遍历的时候，自左往右取出父节点，依次打印子节点。</p>
+<p>上方的解题思路中父节点的存储和遍历让我们想到一个熟悉的数据结构，对了，“先进先出”的思想，那就是队列。在遍历上一层结点的时候，先打印结点值，然后判断是够存在左右子树，如果存在，将给结点入队，直到该层的结点全部遍历完成。然后队列出队，分别打印结点，循环此步骤。</p>
+<h4 id="二、测试用例-4"><a href="#二、测试用例-4" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>完全二叉树、非完全二叉树 —— 普通测试</li>
+<li>只有左、右子节点的二叉树、只有一个节点的二叉树 —— 特殊测试</li>
+<li>空树 —— 输入测试</li>
+</ul>
+<h4 id="三、代码编写-1"><a href="#三、代码编写-1" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><ul>
+<li>参数：树的根节点。</li>
+<li>判断是否为空。</li>
+<li>打印结点值,判断该结点是否存在子节点，如果存在就入队。</li>
+<li>出队，打印结点</li>
+<li>循环上述步骤</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">var</span> levelOrder = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> result = []; <span class="comment">// 存放遍历的结果</span></span><br><span class="line"> 	<span class="comment">// 判断根节点是否为 null</span></span><br><span class="line"><span class="keyword">if</span>(root == <span class="literal">null</span>)&#123;</span><br><span class="line">     <span class="keyword">return</span> [];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 声明一个队列</span></span><br><span class="line">   <span class="keyword">let</span> queue = [];</span><br><span class="line">   queue.push(root)</span><br><span class="line">     </span><br><span class="line">   <span class="comment">// 出队，打印结结点、判断是否存在子节点</span></span><br><span class="line">   <span class="keyword">while</span>(queue.length !== <span class="number">0</span>)&#123;</span><br><span class="line">       <span class="keyword">let</span> temp = [];             <span class="comment">// 存储每层的结点</span></span><br><span class="line">       <span class="keyword">let</span> len = queue.length;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; len;j++)&#123;</span><br><span class="line">           <span class="comment">// 出队</span></span><br><span class="line">           <span class="keyword">let</span> tempNode = queue.shift(); </span><br><span class="line">           <span class="comment">// 存储结点值</span></span><br><span class="line">           temp.push(tempNode.val)		  </span><br><span class="line">           <span class="comment">// 判断出队的根节点是否有子节点</span></span><br><span class="line">           <span class="keyword">if</span>(tempVal.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">              queue.push(tempVal.left)</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span>(tempVal.right !== <span class="literal">null</span>)&#123;</span><br><span class="line">              queue.push(tempVal.left)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//存储每层的遍历的结点值</span></span><br><span class="line">       result.push(temp);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 返回结果集</span></span><br><span class="line">   <span class="keyword">return</span> result;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="七、面试题33：二叉树的后序遍历序列"><a href="#七、面试题33：二叉树的后序遍历序列" class="headerlink" title="七、面试题33：二叉树的后序遍历序列"></a>七、<strong>面试题33：二叉树的后序遍历序列</strong></h3><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后续遍历。如果是返回 true，如果不是返回 false。假设输入的任意两个数字互不相同。</p>
+<h4 id="一、思路-5"><a href="#一、思路-5" class="headerlink" title="一、思路"></a>一、思路</h4><p><strong>根据后续遍历的规律和二叉树具备的特点</strong>，可以找到的规律就是（左、右、根）序列的最后一个数为根节点，又根据二叉树的特点，左子节点小于根节点，右子节点大于根节点，分离出左右子节点，根据上边的规律，<strong>递归</strong>剩下的序列。</p>
+<h4 id="二、测试用例-5"><a href="#二、测试用例-5" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>完全二叉树、不完全二叉树 —— 普通测试</li>
+<li>只有左子节点的二叉树、只有右子节点的二叉树、只有一个节点的二叉树 —— 特殊测试</li>
+<li>空树 —— 输入测试</li>
+</ul>
+<h4 id="三、代码编写-2"><a href="#三、代码编写-2" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><ul>
+<li>参数：数组</li>
+<li>判断数组是否为空</li>
+<li>取数组的最后一个元素作为对比的根节点</li>
+<li>根据根节点值的大小分割数组（分割数组的同时判断是否都满足小于根节点的要求）</li>
+<li>判断分割数组是否是空</li>
+<li>递归上方的步骤</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> isPostorder = <span class="function">(<span class="params">arr</span>)=&gt;</span>&#123;</span><br><span class="line">  	<span class="comment">// 判断数组是否为 null</span></span><br><span class="line">    <span class="keyword">if</span>(arr.length == <span class="number">0</span>)&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 取数组最后一个数字为根节点</span></span><br><span class="line">    <span class="keyword">let</span> rootVal = arr[arr.length - <span class="number">1</span>]; </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 搜索小于根节点的值,并记录该结点的下标(除根节点外)</span></span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;i &lt; arr.length - <span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] &gt; rootVal)&#123;</span><br><span class="line">           <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 搜索大于根节点的值（除根节点外）</span></span><br><span class="line">    <span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;j &lt; arr.length - <span class="number">1</span>; j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(rootVal &gt; arr[j])&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递归判断左子节点的值（先判断左子节点是够有值），默认返回 true</span></span><br><span class="line">     <span class="keyword">let</span> left = <span class="literal">true</span></span><br><span class="line">     <span class="keyword">if</span>(i &gt; <span class="number">0</span>)&#123;</span><br><span class="line">         left = isPostorder(arr.slice(<span class="number">0</span>, i))</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 如果右子树不为空，判断右子树为二叉搜索树</span></span><br><span class="line">    <span class="keyword">let</span> right = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">if</span>(i &lt; arr.length - <span class="number">1</span>)&#123;</span><br><span class="line">        right = isPostorder(arr.slice(i,arr.length - <span class="number">1</span>))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (left &amp;&amp; right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="八、面试34：二叉树和为某一值路径"><a href="#八、面试34：二叉树和为某一值路径" class="headerlink" title="八、面试34：二叉树和为某一值路径"></a>八、<strong>面试34：二叉树和为某一值路径</strong></h3><blockquote>
+<p> 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输出整数的所有路径。从树的根节点开始往下一直到叶子节点所经过的节点形成一条路径。</p>
+</blockquote>
+<h4 id="一、思路-6"><a href="#一、思路-6" class="headerlink" title="一、思路"></a>一、思路</h4><p><strong>1、找规律：</strong>需要遍历树的所有结点：我们会想到前、中、后遍历</p>
+<pre><code>:  需要存储遍历过的路径（节点值）：我们想到用数组存储</code></pre><p><strong>2、算法思想：</strong>前序遍历（根、左、右）的特点，从根到叶子节点，会从树自左向右依次遍历二叉树，所有可能的路径都会遍历到，所以使用前序遍历更佳。</p>
+<p>每遍历一个结点就将其累加，然后判断累加的值是否等于目标值且子节点为叶子节点。如果是，则打印输出该路径；如果不是，则回退到上一父节点，此时数组中的数据结点进行删除，然后不断的遍历下一子节点，递归。</p>
+<p><strong>3、综上所述，</strong>存储结点路径的时候，涉及到累加结点和删除节点，我们可以将其抽象成入栈和出栈。然后遍历二叉树的所有路径可以用到递归的过程，让出栈和入栈与递归的状态达成一致，这到题就不难了。</p>
+<h4 id="二、测试用例-6"><a href="#二、测试用例-6" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>完全二叉树、非完全二叉树（有一条路径满足、有多条路径满足、都不满足）—— <strong>普通测试</strong>。</li>
+<li>只有左子节点的二叉树、只有右子节点的二叉树、只有一个结点的二叉树 —— <strong>特殊测试</strong>。</li>
+<li>空二叉树、输入负数 —— <strong>输入测试</strong>。</li>
+</ul>
+<h4 id="三、代码编写-3"><a href="#三、代码编写-3" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><ul>
+<li>参数：二叉树、目标值</li>
+<li>判断二叉树是否为空和目标是是否是负数</li>
+<li>开始进行递归遍历二叉树进行查找满足条件的路径<ul>
+<li>将当前递归的根节点进行累加</li>
+<li>同时该结点入栈</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> treeSum = <span class="function">(<span class="params">root, targetSum</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 判断输入的二叉树和整数</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">null</span> || targetSum &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 开始进行递归遍历二叉树进行查找满足条件的路径</span></span><br><span class="line">    <span class="keyword">let</span> result = [];    <span class="comment">// 存放最后满足条件的路径</span></span><br><span class="line">    <span class="keyword">let</span> pathStack = []; <span class="comment">// 储存当前路径的栈</span></span><br><span class="line">    <span class="keyword">let</span> currentSum = <span class="number">0</span>; <span class="comment">// 当前累加的结果值</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 进行路径查找</span></span><br><span class="line">    FindPath(root, targetSum, currentSum, pathStack, result);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 返回结果</span></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> FindPath = <span class="function">(<span class="params">root, targetSum, currentSum, pathStack, result</span>)=&gt;</span>&#123;</span><br><span class="line"><span class="comment">// 将当前跟根节点进行累加</span></span><br><span class="line">    	currentSum = currentSum + root.val;</span><br><span class="line">    	</span><br><span class="line">      <span class="comment">// 存储栈中</span></span><br><span class="line">      pathStack.push(root.val);</span><br><span class="line">    </span><br><span class="line">      <span class="comment">// 判断目标值是否相等且是否为叶子节点</span></span><br><span class="line">    	<span class="keyword">if</span>(currentSum == targetSum &amp;&amp; root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>)&#123;</span><br><span class="line">          <span class="comment">// 打印路径</span></span><br><span class="line">          result.push(pathStack.slice(<span class="number">0</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">      <span class="comment">// 如果左子节点不为空</span></span><br><span class="line">      <span class="keyword">if</span>(root.left !== <span class="literal">null</span>)&#123;</span><br><span class="line">          FindPath(root.left, targetSum, currentSum, pathStack, result);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 如果当前结点还有右子树，继续遍历</span></span><br><span class="line">      <span class="keyword">if</span>(root.right !== <span class="literal">null</span>)&#123;</span><br><span class="line">          FindPath(root.right, targetSum, currentSum, pathStack, result);</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">      <span class="comment">// 该路径遍历到叶子节点，还没有满足条件，则退回到父节点，进行下一结点的累加判断</span></span><br><span class="line">      pathStack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h4><ul>
+<li><p>当问题能够用递归去解决的时候，首先找到递归的点，比如二叉树的中的每个节点就是递归的点。</p>
+</li>
+<li><p>当使用递归解决满足条件的问题时，直接每层递归进行判断，如果满足条件就处理，否则，递归自动跳过 if 判断。</p>
+</li>
+</ul>
+<h3 id="九、面试题37：序列化二叉树"><a href="#九、面试题37：序列化二叉树" class="headerlink" title="九、面试题37：序列化二叉树"></a>九、<strong>面试题37：序列化二叉树</strong></h3><p>请实现两个函数，分别用来序列化二叉树和反序列化二叉树。</p>
+<h4 id="一、思路-7"><a href="#一、思路-7" class="headerlink" title="一、思路"></a>一、思路</h4><p>1、序列化：遍历二叉树，遇到叶子节点，将其转化为 $ 表示。</p>
+<p>2、反序列化：根据前序遍历的特点（根、左、右），进行二叉树的还原。</p>
+<h4 id="二、测试用例-7"><a href="#二、测试用例-7" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>完全二叉树、非完全二叉树 —— 普通测试</li>
+<li>只有左子节点、只有右子节点、只有一个节点 —— 特殊测试</li>
+<li>空数组、空树 —— 输入测试</li>
+</ul>
+<h4 id="三、代码编写-4"><a href="#三、代码编写-4" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><ul>
+<li>序列化:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> result = [];</span><br><span class="line"><span class="keyword">var</span> serialize = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判空</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">null</span>)&#123;</span><br><span class="line">        result.push(<span class="string">'$'</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 前序遍历</span></span><br><span class="line">    result.push(root.val)</span><br><span class="line">    serialize(root.left)</span><br><span class="line">    serialize(root.right)</span><br><span class="line">    <span class="comment">// 打印</span></span><br><span class="line">    <span class="built_in">console</span>.log(result)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">serialize(symmetricalTree);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>反序列化:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 反序列化二叉树</span></span><br><span class="line"><span class="keyword">var</span> deserialize = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判空</span></span><br><span class="line">    <span class="keyword">if</span>(arr.length == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 出栈队判断</span></span><br><span class="line">    <span class="keyword">let</span> node = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">const</span> val = arr.shift();</span><br><span class="line">    <span class="keyword">if</span>(val !== <span class="string">'$'</span>)&#123;</span><br><span class="line">        node = &#123;</span><br><span class="line">            val: val</span><br><span class="line">        &#125;;</span><br><span class="line">        node.left = deserialize(arr);</span><br><span class="line">        node.right = deserialize(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'8,6,5,$,$,7,$,$,6,7,$,$,5,$,$'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(deserialize(str.split(<span class="string">','</span>)));</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="十、面试题54：二叉树的第-K-大节点"><a href="#十、面试题54：二叉树的第-K-大节点" class="headerlink" title="十、面试题54：二叉树的第 K 大节点"></a>十、<strong>面试题54：二叉树的第 K 大节点</strong></h3><blockquote>
+<p>给定一棵二叉搜索树，请找出其中的第 K 大节点。</p>
+</blockquote>
+<h4 id="一、思路-8"><a href="#一、思路-8" class="headerlink" title="一、思路"></a>一、思路</h4><p>要想找到第 K 大结点必要要知道排序，二叉树的前、中、后遍历中的中序遍历就是从小到大排序。然后遍历的同时计数找到第 K 大节点。</p>
+<h4 id="二、测试用例-8"><a href="#二、测试用例-8" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>完全二叉树、非完全二叉树 —— 普通测试</li>
+<li>只有左子节点的二叉树、只有右子节点的二叉树、只有一个节点的二叉树 —— 特殊测试</li>
+<li>K 的范围、空树 —— 输入测试</li>
+</ul>
+<h4 id="三、代码编写-5"><a href="#三、代码编写-5" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 求二叉树中第 K 大节点</span></span><br><span class="line"><span class="keyword">var</span> kthTallest = <span class="function"><span class="keyword">function</span>(<span class="params">root, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  <span class="comment">// 遍历</span></span><br><span class="line">  <span class="keyword">const</span> inorder = <span class="function">(<span class="params">root</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (root) &#123;</span><br><span class="line">      inorder(root.left);</span><br><span class="line">      res.push(root.val);</span><br><span class="line">      inorder(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 调用</span></span><br><span class="line">  inorder(root);</span><br><span class="line">  <span class="keyword">return</span> res[res.length - k]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="十一、面试题55：二叉树的深度"><a href="#十一、面试题55：二叉树的深度" class="headerlink" title="十一、面试题55：二叉树的深度"></a>十一、<strong>面试题55：二叉树的深度</strong></h3><p>  输入一棵二叉树的根节点，求该树的深度。从根节点到叶子节点依次经过的节点（包含根、叶子节点）形成树的一条路径，最长路径的长度树的深度。</p>
+<h4 id="一、思路-9"><a href="#一、思路-9" class="headerlink" title="一、思路"></a>一、思路</h4><p>1、思路一：按层遍历，对按层遍历的算法进行改进，每遍历一次层进行加一。</p>
+<p>2、思路二：寻找最长路径，借助遍历最长路径的设计思路记性改进。只需记录两个子树最深的结点为主。</p>
+<h4 id="二、测试用例-9"><a href="#二、测试用例-9" class="headerlink" title="二、测试用例"></a>二、测试用例</h4><ul>
+<li>完全二叉树、非完全二叉树 —— 普通测试</li>
+<li>只有左子节点、只有右子节点、只有一个结点二叉树 ——  特殊测试</li>
+<li>空树 —— 输入测试</li>
+</ul>
+<h4 id="三、代码编写-6"><a href="#三、代码编写-6" class="headerlink" title="三、代码编写"></a>三、代码编写</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> maxDepth = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 如果根节点为 null </span></span><br><span class="line">    <span class="keyword">if</span>(root === <span class="literal">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 递归左子树</span></span><br><span class="line">    <span class="keyword">let</span> depthLeft  = maxDepth(root.left);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递归右子树</span></span><br><span class="line">    <span class="keyword">let</span> depthRight  = maxDepth(root.right);</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 将子问题合并求总问题</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(depthLeft,depthRight) + <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="一、解题思路总结"><a href="#一、解题思路总结" class="headerlink" title="一、解题思路总结"></a>一、解题思路总结</h3><h4 id="1、根据树前（根左右）、中（左根右）、后（左右根）序遍历的规律来解决问题。"><a href="#1、根据树前（根左右）、中（左根右）、后（左右根）序遍历的规律来解决问题。" class="headerlink" title="1、根据树前（根左右）、中（左根右）、后（左右根）序遍历的规律来解决问题。"></a>1、根据树前（根左右）、中（左根右）、后（左右根）序遍历的规律来解决问题。</h4><blockquote>
+<p>通过二叉树的遍历来找到规律，从而找到解题思路。</p>
+</blockquote>
+<ul>
+<li><p>重建二叉树</p>
+<p>根据前、中序遍历，找到二叉树的根节点和左右子树的规律，然后递归构建二叉树。</p>
+</li>
+<li><p>二叉树的下一节点</p>
+<p>根据中序遍历，找出包含任何节点的一下节点的所有可能情况，然后根据情况分别进行判断。</p>
+</li>
+<li><p>二叉树的后续遍历序列</p>
+<p>通过中序遍历找到打印二叉树结点的规律，可以判断此后续遍历是否为二叉树。</p>
+</li>
+<li><p>二叉树和为某一值的路径</p>
+<p>选择二叉树的遍历，对每个节点进行存储判断，然后根据二叉树叶子节点的特点，进行对问题的解决。</p>
+</li>
+<li><p>二叉树的第 K 大结点</p>
+<p>中序遍历的结果是从小到大，然后倒数找到第 K 大数据。</p>
+</li>
+<li><p>序列化二叉树</p>
+<p>遍历二叉树，遇到 null 转化为特殊符号。</p>
+</li>
+</ul>
+<h4 id="2、根据树的结构寻找规律来解决问题"><a href="#2、根据树的结构寻找规律来解决问题" class="headerlink" title="2、根据树的结构寻找规律来解决问题"></a>2、根据树的结构寻找规律来解决问题</h4><blockquote>
+<p>通过二叉树的特点：左子节点小于父节点、右子节点大于父节点、树的节点可以进行递归等，以上特点又是更好的帮我们解决思路。</p>
+</blockquote>
+<ul>
+<li><p>树的子结构</p>
+<p>根据子结构和主体树的特点，对其树的结构进行分析，可以找到解题的思路。</p>
+</li>
+<li><p>镜像二叉树</p>
+<p>观察镜像二叉树的左右子节点交换特点，可以找到解题思路。</p>
+</li>
+<li><p>对称二叉树</p>
+<p>观察对称二叉树有什么特点，在结构上和遍历上寻找特点和规律，可以找到解题思路。</p>
+</li>
+<li><p>按层遍历二叉树</p>
+<p>根据二叉树每层节点的结构关系（父子关系），可以进行每层遍历，通过上层找到下层的遍历结点。</p>
+</li>
+<li><p>反序列化二叉树</p>
+<p>根据遍历的规律和二叉树的规律，将遍历结果生成一棵二叉树。</p>
+</li>
+</ul>
+<h3 id="二、测试用例-10"><a href="#二、测试用例-10" class="headerlink" title="二、测试用例"></a>二、测试用例</h3><p>通过以上题目中，我将测试用例分为三大种，测试代码的时候，在这三大种进行想就可以了。</p>
+<ul>
+<li><strong>普通测试</strong></li>
+<li><strong>特殊测试</strong></li>
+<li><strong>输入测试</strong></li>
+</ul>
+<h4 id="1、普通测试"><a href="#1、普通测试" class="headerlink" title="1、普通测试"></a>1、普通测试</h4><p>普通测试从两个方面去想，第一个方面就是问题的本身，比如对称二叉树的判断，普通测试就是分别输入一个对称二叉树和非对称二叉树进行测试。第二个方面就是问题本身没有什么可以找到的测试，比如按层遍历二叉树，它的普通测试就是分别输入完全二叉树（普通二叉树也可以），非完全二叉树进行测试。</p>
+<h4 id="2、特殊测试"><a href="#2、特殊测试" class="headerlink" title="2、特殊测试"></a>2、特殊测试</h4><p>特殊测试强调的是树的特殊性，特殊的二叉树就那么几个，比如：只有左子节点的二叉树、只有右子节点的二叉树、只有一个节点的二叉树、没有结点的二叉树。</p>
+<h4 id="3、输入测试"><a href="#3、输入测试" class="headerlink" title="3、输入测试"></a>3、输入测试</h4><p>输入测试，顾名思义，要对用户输入的参数进行判断，比如，你输入一棵树，要判断是否为空。再比如，求最大 K 结点，对 K 的取值范围进行判断。</p>
+<h3 id="三、代码编写-7"><a href="#三、代码编写-7" class="headerlink" title="三、代码编写"></a>三、代码编写</h3><p>将二叉树的解题思路转化为代码除了熟练最基本的二叉树的增、删、改、查之外，最重要的就是二叉树的递归，因为二叉树的结构决定了用递归解决二叉树问题更加简便。但是递归的书写并不仅简单，因为它有递和归的过程，大脑并不能更好的去处理这些，可以去看之前总结递归的文章《<a href="https://github.com/luxiangqiang/Blog/blob/master/articel/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%92%E5%BD%92%E7%B3%BB%E5%88%97.md" target="_blank" rel="noopener">数据结构与算法之递归系列</a>》。</p>
+<p>书写二叉树递归问题有一点特别重要，不要尝试的去想那个递归的过程，而是先去寻找到递归的终止条件，然后对每次递归的结果进行判断，然后让他递归去吧，再次强调千万别去思考过程。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数据结构与算法之递归系列</title>
+    <url>/2020/02/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%80%92%E5%BD%92%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<h1 id="数据结构与算法之递归系列"><a href="#数据结构与算法之递归系列" class="headerlink" title="数据结构与算法之递归系列"></a>数据结构与算法之递归系列</h1><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E5%AF%BC%E5%9B%BE.jpg" alt=""></p>
+<br>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95.png" alt=""></p>
+<br>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几个月之前就想写这样一篇文章分享给大家，由于自己有心而力不足，没有把真正的学到的东西沉淀下来，所以一直在不断的自学。可能是因为在一所三流大学，资源也比较少，只能自己在网搜索相关资料，在互联网上遇到了一些朋友的帮助下去深入理解，然后自己抽出大量时间做题总结、归纳，才会把已有的知识概念所被自己吸收和理解，形成了自己的技术思想体系。</p>
+<p>然后自己又用了一个星期的时间去整理、分类，才有了这篇 8000 字有关递归知识的分享，希望能够帮助正在学习递归的小伙伴们。而且有了这篇文章的支撑和动力，往后还会写出关于数据结构与算法一些难懂的概念简单化。如果文章中有错误的地方，希望大家指正，能够为他人分享出更有质量的内容！</p>
+<br>
+
+<h2 id="为什么要写这篇递归文章"><a href="#为什么要写这篇递归文章" class="headerlink" title="为什么要写这篇递归文章"></a>为什么要写这篇递归文章</h2><p>看了很多关于递归的文章，也总结了很多递归的文章，也看了多篇文章下方读者的评论。有的读者评论到文章清晰易懂，有的却喷作者写的存在很多错误，埋怨作者写出来很垃圾，还不如不写。我想从理性的角度说一下，创作者写文章的最初好意是能够帮助别人对此知识点有进一步的了解，并不代表一定能够满足每个人的要求。</p>
+<p>另一方面，每篇文章的作者可能理解的不够透彻，很多地方可能存在许多错误，包括理解上的错误，笔误等，这也是写文章的第二个目的，能够让别人挑出自己文章中的不足，能够达到与别人共同进步的目的，一举两得，两全其美。</p>
+<p>接下来分享的文章是关于递归的，这篇文章不单单分享递归的一切，我觉得更重要的是向每位读者传递一个思想。思想？对的，没错！这篇文章不能说包含递归的边边角角，但是通过自己的理论上的学习和实践，有了自己的一套递归思想。</p>
+<p>什么问题该用递归，什么问题用递归简洁，什么问题就不能使用递归解决，以及对于特定的问题用递归解决的陷阱，能不能进一步对递归进行二次优化，这些都是今天小鹿分享的内容。</p>
+<br>
+
+<h2 id="什么是递归？"><a href="#什么是递归？" class="headerlink" title="什么是递归？"></a>什么是递归？</h2><blockquote>
+<p>递归，顾名思义，有递有归才叫递归，有递无归，有归无递那叫 “耍流氓” 。</p>
+</blockquote>
+<br>
+
+<h2 id="为什么要学习递归？"><a href="#为什么要学习递归？" class="headerlink" title="为什么要学习递归？"></a>为什么要学习递归？</h2><p>我们学习一门技术也好，编程语言也好，首先学习之前我们知道它将能给我们带来什么，能帮助我们解决什么样的问题，这也是激励我们去学习它的动力所在。</p>
+<p>从数组到链表、散列表，再到基本算法等，直到遇到递归之后，感觉非常的难理解。我相信每个人都有这种感觉，一开始觉得非常难，经历了九九八十一难之后，还是没有弄懂递归里边的猫腻，然后就自然而然的跳过了。</p>
+<p>后来我就开始刷了一个月的 LeetCode 题，发现递归在数据结构与算法中有着一席之地，统治着江山。大部分的题都可以用递归去解决，如：二叉树的遍历、回溯算法、0-1 背包问题、深度优先遍历、回溯算法等等，我整理了至少二三十到关于递归的题，才发现递归的重要性，所以不得不重新深入递归学习，所有有了今天这篇文章。</p>
+<br>
+
+<h2 id="怎么理解递归的过程？"><a href="#怎么理解递归的过程？" class="headerlink" title="怎么理解递归的过程？"></a>怎么理解递归的过程？</h2><blockquote>
+<p>上方我对递归“耍流氓”式的定义并不能让你准确的理解递归是什么，那么我们就来活生生的举个生活中的例子。</p>
+</blockquote>
+<br>
+
+<h4 id="1、问题"><a href="#1、问题" class="headerlink" title="1、问题"></a>1、问题</h4><blockquote>
+<p>比如你和小鹿我一样，在大学里喜欢插队打饭（作为一个三好学生，我怎么能干这种事呢？哈哈），那么队伍后边的同学本数着自己前边还有 5 个同学就改轮到自己了，由于前边同学不断的插队，这时他发现，怎么觉得自己离着打饭的窗口越来越远呢？这时如果他想知道自己在队队列中的的第几个（前提是前边不再有人插队），用递归思想来解决，我们怎么做呢？</p>
+</blockquote>
+<br>
+
+<h4 id="2、“递”"><a href="#2、“递”" class="headerlink" title="2、“递”"></a>2、“递”</h4><blockquote>
+<p>于是他问前边的同学是第几位，前边的同学也不只到呀，于是前边的同学问他前边的同学是第几位，直到前边第二个同学问到第一个正在打饭的同学是队伍的第几个（有点小尴尬）。打饭的同学不耐烦的说，没看到我是第一个正在打饭吗？<strong>这个过程其实是就是一个递归中“递”的过程</strong>。</p>
+</blockquote>
+<br>
+
+<h4 id="3、“归”"><a href="#3、“归”" class="headerlink" title="3、“归”"></a>3、“归”</h4><blockquote>
+<p>然后前边打饭的第二个同学不耐烦的又告诉第三个同学，我是第二个，没看单我前边有个家伙正在打饭吗？然后第三个传给第四个，以后往后传，直到那位逐渐远离窗口的同学的前一个人告诉他是第几个之后，他知道了自己目前在队伍中的第几个位置。<strong>这个过程我们可以理解为递归中“归”的过程</strong>。</p>
+</blockquote>
+<br>
+
+<h4 id="4、终止条件"><a href="#4、终止条件" class="headerlink" title="4、终止条件"></a>4、终止条件</h4><blockquote>
+<p>“打饭的同学不耐烦的说，没看到我是第一个正在打饭吗？”，在递归中，我们称为<strong>终止条件</strong>。</p>
+</blockquote>
+<br>
+
+<h4 id="5、怎么理解递归？"><a href="#5、怎么理解递归？" class="headerlink" title="5、怎么理解递归？"></a>5、怎么理解递归？</h4><blockquote>
+<p>1）问题虽然是层层递归的分析，但是用程序表示的时候，不要层层的在大脑中调用递归代码去想，这样可能会使你完全陷入到 “递” 的过程中去，“归” 的时候，归不出来了，这些都是我们交给计算机干的事情。</p>
+<p>2）那我们在写程序的时候怎么理解递归呢？我们只找问题之间存在的关系，<strong>屏蔽掉递归的细节</strong>，具体看（五）分析。</p>
+</blockquote>
+<br>
+
+<h2 id="满足递归的三个条件"><a href="#满足递归的三个条件" class="headerlink" title="满足递归的三个条件"></a>满足递归的三个条件</h2><blockquote>
+<p>通过上方的例子，我们可以很容易的总结出满足递归的三个条件。</p>
+</blockquote>
+<br>
+
+<h4 id="1、一个问题能不能分解成多个子问题来解决"><a href="#1、一个问题能不能分解成多个子问题来解决" class="headerlink" title="1、一个问题能不能分解成多个子问题来解决"></a>1、一个问题能不能分解成多个子问题来解决</h4><blockquote>
+<p>想知道自己在队伍中的位置，将其问题分解为“每个人所处队伍中的位置”这样的多个子问题。</p>
+</blockquote>
+<br>
+
+<h4 id="2、该问题是否和子问题的解决思路相同"><a href="#2、该问题是否和子问题的解决思路相同" class="headerlink" title="2、该问题是否和子问题的解决思路相同"></a>2、该问题是否和子问题的解决思路相同</h4><blockquote>
+<p>想要知道自己当前的位置，就要问前边人所处的位置。那么前边人想要知道自己所处的位置，就要知道他前边人的位置。所以说，该问题和子问题的解决思路相同，满足第二个条件。</p>
+</blockquote>
+<br>
+
+<h4 id="3、该问题是否有终止条件"><a href="#3、该问题是否有终止条件" class="headerlink" title="3、该问题是否有终止条件"></a>3、该问题是否有终止条件</h4><blockquote>
+<p>第一个正在打饭的同学说自己是队伍中的第一人，这就是所谓的终止条件，找到终止条件之后就开始进行“归”的过程。</p>
+</blockquote>
+<br>
+
+<h2 id="怎么编写递归代码？"><a href="#怎么编写递归代码？" class="headerlink" title="怎么编写递归代码？"></a>怎么编写递归代码？</h2><blockquote>
+<p>如果你对递归有了一定的了解，上边的例子对你来说小菜一碟，下边还有更大的难度来进行挑战。那么问题分析清楚了，怎么根据问题编写出递归代码来呢？</p>
+</blockquote>
+<br>
+
+<h4 id="1、写出递推公式"><a href="#1、写出递推公式" class="headerlink" title="1、写出递推公式"></a>1、写出递推公式</h4><blockquote>
+<p>写递归公式最重要的一点就是找到该问题和子问题的关系，怎么找到之间存在的关系呢？这里我要强调注意的一点就是不要让大脑试图去想层层的递归过程，毕竟大脑的思考方式是顺势思考的（一开始学习递归总是把自己绕绕进去，归的时候，就完全乱套的）。那怎么找到每个子问题之间存在的某种关系呢？</p>
+</blockquote>
+<p>我们只想其中一层（第一层关系），以上述为例，如果我想知道当前队伍的位置，所以我要之前前一个人的位置，然后 <code>+1</code> 就是我的位置了。对于他在什么位置，我丝毫不用关系，而是让递归去解决他的位置。我们可以写出递推公式如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// f(n) 代表当前我在队伍中的位置</span></span><br><span class="line"><span class="comment">// f(n-1) 代表我前边那个人的位置</span></span><br><span class="line"><span class="comment">// 递推公式</span></span><br><span class="line">f(n) = f(n<span class="number">-1</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>※ 注意：</strong>这个式子的含义就是 <code>f(n)</code> 求当前 n 这个人的位置， <code>f(n-1) + 1</code> 代表的就是前一个人的位置 <code>+ 1</code> 就是 <code>n</code> 的位置。</p>
+</blockquote>
+<br>
+
+<h4 id="2、找到终止条件"><a href="#2、找到终止条件" class="headerlink" title="2、找到终止条件"></a>2、找到终止条件</h4><blockquote>
+<p>递推公式我们很轻松的写出来了，但是没有终止条件的递推公式会永远的执行下去的，所以我们要有一个终止条件终止程序的运行。那么怎么找到终止条件呢？</p>
+</blockquote>
+<p>所谓的终止条件就是已知的条件，比如上述的排队打饭的例子中，第一个人正在窗口打饭，他的前边是没有人的，所以他是第一个。第一个人的位置为 1，我们应该怎么表示呢？</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 终止条件</span></span><br><span class="line">f(<span class="number">1</span>) = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>※ 注意：</strong>有的问题终止条件不止一个哦，比如：斐波那契数列。具体问题具体分析。</p>
+</blockquote>
+<br>
+
+<h4 id="3、转换递归代码"><a href="#3、转换递归代码" class="headerlink" title="3、转换递归代码"></a>3、转换递归代码</h4><blockquote>
+<p>递推公式和终止条件我们分析出来了，那么将递推公式转化为递归代码非常容易了。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 终止条件</span></span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>) retun <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 递推公式</span></span><br><span class="line">	<span class="keyword">return</span> f(n<span class="number">-1</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="递归的分类"><a href="#递归的分类" class="headerlink" title="递归的分类"></a>递归的分类</h2><blockquote>
+<p>通过做大量的题，根据递归解决不同的问题，引申出来的几种解决和思考的方式。之所以将其分类，是为了能够更好的理解递归在不同的问题下起着什么作用，如：每层递归之间存在的关系、计算，以及递归枚举所有情况和面临选择性问题的递归。虽然分为了几类，但是递归的本质是一成不变的。</p>
+</blockquote>
+<br>
+
+<h4 id="分类一：递归计算型"><a href="#分类一：递归计算型" class="headerlink" title="分类一：递归计算型"></a>分类一：递归计算型</h4><blockquote>
+<p>将哪一类用递归解决的问题作为计算型呢？我简单总结了为两点，<strong>层层计算和并列计算</strong>。</p>
+</blockquote>
+<br>
+
+<h5 id="1、层层计算"><a href="#1、层层计算" class="headerlink" title="1、层层计算"></a>1、层层计算</h5><blockquote>
+<p>层层计算，顾名思义，能够用递归解决的问题都可以分为多个子问题，我们把每个子问题可以抽象成一层，子问题之间的关系可以表示为层与层之间的关系。我们通过层与层之间的计算关系用递推公式表达出来做计算，经过层层的递归，最终得到结果值。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 例子：</strong></p>
+<blockquote>
+<p>我们再那上方排队打饭的例子来说明，我们的子问题已经分析出来了，就是我想知道当前在队伍中的位置，就是去问我前边人的位置加一就是我当前队伍的位置，这为一层。而前边这个人想知道当前自己的位置，需要用同样的解决思路，作为另一层。</p>
+</blockquote>
+<p>层与层之间的关系是什么（我当前队伍中的位置与前边人的位置存在什么样的关系）？这时你会说，当前是 <code>+1</code>。这个大部分人都很容易找出，既然关系确定了，然后通过递推公式很容易写出递归代码。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// f(n) 为我所在的当前层</span></span><br><span class="line"><span class="comment">// f(n-1) 为我前边的人所在的当前层</span></span><br><span class="line"><span class="comment">// + 1 是层与层之间的计算关系</span></span><br><span class="line">f(n) = f(n<span class="number">-1</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>▉ 总结：</strong></p>
+<blockquote>
+<p>我将以上一类递归问题命名为「递归计算型」的「层层计算类型」。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 举一反三：</strong></p>
+<blockquote>
+<p>求年龄的问题也是层层计算类型的问题，自己尝试分析一下（一定要自己尝试的去想，动手编码，才能进一步领悟到递归技巧）。</p>
+<p><strong>问题一：</strong>有 5 个人坐在一起，问第 5 个人多少岁，他说比第 4 个人大 2 岁。问第 4 个人多少岁，他说比第 3 个人大2岁。问第 3 人多少岁，他说比第 2个 人大 2 岁。问第2个人多少岁，他说比第 1 个人大 2 岁。最后问第 1 个人，他说他是 10 岁。编写程序，当输入第几个人时求出其对应的年龄。</p>
+<p><strong>问题二：</strong>单链表从尾到头一次输出结点值，用递归实现。</p>
+</blockquote>
+<br>
+
+<h5 id="2、并列计算"><a href="#2、并列计算" class="headerlink" title="2、并列计算"></a>2、并列计算</h5><blockquote>
+<p>并列计算，顾名思义，问题的解决方式是通过递归的并列计算来得到结果的。层与层之间并没有一定的计算关系，而只是简单的改变输入的参数值。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 例子：</strong></p>
+<blockquote>
+<p>最经典的题型就是<strong>斐波那契数列</strong>。观察这样一组数据 0、 1、1、2、3、5、8、13、21、34…，去除第一个和第二个数据外，其余的数据等于前两个数据之和（如：<code>2 = 1 + 1</code>，<code>8 = 3 + 5</code>，<code>34 = 21 + 13</code>）。你可以尝试着根据「满足递归的三个条件」以及「怎么写出递归代码」的步骤自己动手动脑亲自分析一下。</p>
+</blockquote>
+<p>我也在这里稍微做一个分析。</p>
+<p>1）第一步：首先判断能不能将问题分解为多个子问题，上边我也分析过了，除了第一个和第二个数据，其他数据是前两个数据之和。那么前两个数据怎么知道呢？同样的解决方式，是他们前两个数之和。</p>
+<p>2）第二步：找到终止条件，如果不断的找到前两个数之和，直到最前边三个数据 <code>0、1、1</code> 。如果递归求第一个 1 时，前边的数据不够，所以这也是我们找到的终止条件。</p>
+<p>3）第三步：既然我们终止条件和关系找到了，递推公式也就不难写出 <code>f(n) = f(n-1) + f(n-2)</code>（n 为要求的第几个数字的值）。</p>
+<p>4）转化为递归代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 终止条件</span></span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 递推公式</span></span><br><span class="line">    <span class="keyword">return</span> f(n<span class="number">-1</span>) + f(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>▉ 总结：</strong></p>
+<blockquote>
+<p>我将上方的问题总结为并列计算型。也可以归属为层层计算的一种，只不过是 + 1 改成了加一个 f 函数自身的递归（说白了，递归的结果也是一个确切的数值）。之所谓并列计算 <code>f(n-1)</code> 和 <code>f(n-2)</code> 互不打扰，各自递归计算各的值。最后我们将其计算的结果值相加是我们最想要的结果。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 举一反三：</strong></p>
+<blockquote>
+<p>青蛙跳台阶的问题也是一种并列计算的一种，自己尝试着根据上边的思路分析一下，实践出真知（一定要自己尝试的去想，动手编码，才能进一步领悟到递归技巧）。</p>
+<p><strong>问题：</strong></p>
+<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上2 级。求该青蛙跳上一个n 级的台阶总共有多少种跳法。</p>
+</blockquote>
+<br>
+
+<h4 id="分类二：递归枚举型"><a href="#分类二：递归枚举型" class="headerlink" title="分类二：递归枚举型"></a>分类二：递归枚举型</h4><blockquote>
+<p>递归枚举型最多的应用就是回溯算法，枚举出所有可能的情况，怎么枚举所有情况呢？通过递归编程技巧进行枚举。那什么是回溯算法？比如走迷宫，从入口走到出口，如果遇到死胡同，需要回退，退回上一个路口，然后走另一岔路口，重复上述方式，直到找到出口。</p>
+</blockquote>
+<p>回溯算法最经典的问题又深度优先遍历、八皇后问题等，应用非常广泛，下边以八皇后问题为例子，展开分析，其他利用递归枚举型的回溯算法就很简单了。</p>
+<br>
+
+<h5 id="八皇后问题"><a href="#八皇后问题" class="headerlink" title="八皇后问题"></a>八皇后问题</h5><blockquote>
+<p>在 8 X 8 的网格中，放入八个皇后（棋子），满足的条件是，任意两个皇后（棋子）都不能处于同一行、同一列或同一斜线上，问有多少种摆放方式？</p>
+</blockquote>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%E6%AD%A3%E7%A1%AE.png" alt=""></p>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98error.png" alt=""></p>
+<p><strong>▉ 问题分析：</strong></p>
+<blockquote>
+<p>要想满足任意两个皇后（棋子）都不能处于同一行、同一列或同一斜线上，需要一一枚举皇后（棋子）的所有摆放情况，然后设定条件，筛选出满足条件的情况。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 算法思路：</strong></p>
+<blockquote>
+<p>我们把问题分析清楚了之后，怎么通过递归实现回溯算法枚举八个皇后（棋子）出现的所有情况呢？</p>
+<p>1）我们在 8 X 8 的网格中，先将第一枚皇后（棋子）摆放到第一行的第一列的位置（也就是坐标: (0,0)）。</p>
+<p>2）然后我们在第二行安置第二个皇后（棋子），先放到第一列的位置，然后判断同一行、同一列、同一斜线是否存在另一个皇后？如果存在，则该位置不合适，然后放到下一列的位置，然后在判断是否满足我们设定的条件。</p>
+<p>3）第二个皇后（棋子）找到合适的位置之后，然后在第三行放置第三枚棋子，依次将八个皇后放到合适的位置。</p>
+<p>4）这只是一种可能，因为我设定的第一个皇后是固定位置的，在网格坐标的（0,0） 位置，那么怎么枚举所有的情况呢？然后我们不断的改变第一个皇后位置，第二个皇后位置…… ，就可以枚举出所有的情况。如果你和我一样，看了这个题之后，如果还有点懵懵懂懂，那么直接分析代码吧。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 代码实现：</strong></p>
+<blockquote>
+<p>虽然是用 <code>javascript</code> 实现的代码，相信学过编程的小伙伴基本的代码逻辑都可以看懂。根据上方总结的递归分析满足的三个条件以及怎么写出递归代码的步骤，一步步来分析八皇后问题。</p>
+</blockquote>
+<br>
+
+<p><strong>1、将问题分解为多个子问题</strong></p>
+<blockquote>
+<p>在上述的代码分析和算法思路分析中，我们可以大体知道怎么分解该问题了，枚举出八个皇后（棋子）所有的满足情况可以分解为，先寻找每一种满足的情况这种子问题。比如，每个子问题的算法思路就是上方列出的四个步骤。</p>
+</blockquote>
+<br>
+
+<p><strong>2、找出终止条件</strong></p>
+<blockquote>
+<p>当遍历到第八行的时候，递归结束。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 终止条件</span></span><br><span class="line"><span class="keyword">if</span>(row === <span class="number">8</span>)&#123;</span><br><span class="line">    <span class="comment">// 打印第 n 种满足的情况</span></span><br><span class="line">    <span class="built_in">console</span>.log(result)</span><br><span class="line">    n++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>3、写出递推公式</strong></p>
+<blockquote>
+<p><code>isOkCulomn()</code> 函数判断找到的该位置是否满足条件（不能处于同一行、同一列或同一斜线上）。如果满足条件，我们返回 <code>true</code>，进入 <code>if</code> 判断，<code>row</code>行数加一传入进行递归下一行的皇后位置。直至递归遇到终止条件位置，<code>column ++</code>，将第一行的皇后放到下一位置，进行继续递归，枚举出所有可能的摆放情况。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 每一列的判断</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> column = <span class="number">0</span>; column &lt; <span class="number">8</span>; column++)&#123;</span><br><span class="line">    <span class="comment">// 判断当前的列位置是否合适</span></span><br><span class="line">    <span class="keyword">if</span>(isOkCulomn(row,column))&#123;</span><br><span class="line">        <span class="comment">// 保存皇后的位置</span></span><br><span class="line">        result[row] = column;</span><br><span class="line">        <span class="comment">// 对下一行寻找数据</span></span><br><span class="line">        cal8queens(row + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 此循环结束后,继续遍历下一种情况,就会形成一种枚举所有可能性</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 判断当前列是否合适</span></span><br><span class="line"><span class="keyword">const</span> isOkCulomn = <span class="function">(<span class="params">row,column</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 左上角列的位置</span></span><br><span class="line">    <span class="keyword">let</span> leftcolumn = column - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 右上角列的位置</span></span><br><span class="line">    <span class="keyword">let</span> rightcolumn = column + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = row - <span class="number">1</span>;i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="comment">// 判断当前格子正上方是否有重复</span></span><br><span class="line">        <span class="keyword">if</span>(result[i] === column) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断当前格子左上角是否有重复</span></span><br><span class="line">        <span class="keyword">if</span>(leftcolumn &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] === leftcolumn) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断当前格式右上角是否有重复</span></span><br><span class="line">        <span class="keyword">if</span>(leftcolumn &lt; <span class="number">8</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] === rightcolumn) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 继续遍历</span></span><br><span class="line">        leftcolumn --;</span><br><span class="line">        rightcolumn ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>4、转换为递归代码</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 变量</span></span><br><span class="line"><span class="comment">// result 为数组，下标为行，数组中存储的是每一行中皇后的存储的列的位置。</span></span><br><span class="line"><span class="comment">// row 行  </span></span><br><span class="line"><span class="comment">// column 列</span></span><br><span class="line"><span class="comment">// n 计数满足条件的多少种</span></span><br><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line"><span class="keyword">let</span> n = <span class="number">0</span></span><br><span class="line"><span class="keyword">const</span> cal8queens = <span class="function">(<span class="params">row</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 终止条件</span></span><br><span class="line">    <span class="keyword">if</span>(row === <span class="number">8</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result)</span><br><span class="line">        n++;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 每一列的判断</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> column = <span class="number">0</span>; column &lt; <span class="number">8</span>; column++)&#123;</span><br><span class="line">        <span class="comment">// 判断当前的列位置是否合适</span></span><br><span class="line">        <span class="keyword">if</span>(isOkCulomn(row,column))&#123;</span><br><span class="line">            <span class="comment">// 保存皇后的位置</span></span><br><span class="line">            result[row] = column;</span><br><span class="line">            <span class="comment">// 对下一行寻找数据</span></span><br><span class="line">            cal8queens(row + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 此循环结束后,继续遍历下一种情况,就会形成一种枚举所有可能性</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断当前列是否合适</span></span><br><span class="line"><span class="keyword">const</span> isOkCulomn = <span class="function">(<span class="params">row,column</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 设置左上角</span></span><br><span class="line">    <span class="keyword">let</span> leftcolumn = column - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> rightcolumn = column + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = row - <span class="number">1</span>;i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="comment">// 判断当前格子正上方是否有重复</span></span><br><span class="line">        <span class="keyword">if</span>(result[i] === column) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断当前格子左上角是否有重复</span></span><br><span class="line">        <span class="keyword">if</span>(leftcolumn &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] === leftcolumn) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断当前格式右上角是否有重复</span></span><br><span class="line">        <span class="keyword">if</span>(leftcolumn &lt; <span class="number">8</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] === rightcolumn) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 继续遍历</span></span><br><span class="line">        leftcolumn --;</span><br><span class="line">        rightcolumn ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 递归打印所有情况</span></span><br><span class="line"><span class="keyword">const</span> print = <span class="function">(<span class="params">result</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">8</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; <span class="number">8</span>; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] === j)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'Q'</span> + <span class="string">' '</span>)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'*'</span> + <span class="string">' '</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line">cal8queens(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(n)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>▉ 总结</strong></p>
+<blockquote>
+<p>上述八皇后的问题就是用递归来枚举所有情况，然后再从中设置条件，只筛选满足条件的选项。上述代码建议多看几遍，亲自动手实践一下。一开始解决八皇后问题，我自己看了好长时间才明白的，以及递归如何发挥技巧作用的。</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 举一反三：</strong></p>
+<blockquote>
+<p>如果你想练练手，可以自己实现图的深度优先遍历，这个理解起来并不难，可以自己动手尝试着写一写，我把代码传到我的 <code>Github</code> 上了。</p>
+</blockquote>
+<br>
+
+<h4 id="分类三：递归选择型"><a href="#分类三：递归选择型" class="headerlink" title="分类三：递归选择型"></a>分类三：递归选择型</h4><blockquote>
+<p>所谓的递归选择型，每个子问题都要面临选择，求最优解的情况。有的小伙伴会说，求最优解动态规划最适合，对的，没错，但是递归通过选择型「枚举所有情况」，设置条件，求得问题的最优解也是可以实现的，所有我呢将其这一类问题归为递归选择型问题，它也是一个回溯算法。</p>
+</blockquote>
+<br>
+
+<h5 id="0-1-背包问题"><a href="#0-1-背包问题" class="headerlink" title="0 -1 背包问题"></a>0 -1 背包问题</h5><blockquote>
+<p><code>0 - 1</code> 背包问题，了解过的小伙伴也是很熟悉的了。其实这个问题也属于回溯算法的一种，废话不多说，直接上问题。有一个背包，背包总的承载重量是 <code>Wkg</code>。现在我们有 <code>n</code> 个物品，每个物品的重量不等，并且不可分割。我们现在期望选择几件物品，装载到背包中。在不超过背包所能装载重量的前提下，如何让背包中物品的总重量最大？</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 问题分析：</strong></p>
+<blockquote>
+<p>如果你对该问题看懵了，没关系，我们一点点的分析。假如每个物品我们有两种状态，总的装法就有 <code>2^n</code>种，怎么才能不重复的穷举这些可能呢？</p>
+</blockquote>
+<br>
+
+<p><strong>▉ 算法思路：</strong></p>
+<blockquote>
+<p>我们可以把物品依次排列，整个问题就分解为了 n 个阶段，每个阶段对应一个物品怎么选择。先对第一个物品进行处理，选择装进去或者不装进去，然后再递归地处理剩下的物品。</p>
+</blockquote>
+<br>
+
+<p>▉ <strong>代码实现：</strong></p>
+<blockquote>
+<p>这里有个技巧就是设置了条件，自动筛选掉不满足条件的情况，提高了程序的执行效率。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用来存储背包中承受的最大重量</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Number</span>.MIN_VALUE;</span><br><span class="line"><span class="comment">// i: 对第 i 个物品做出选择</span></span><br><span class="line"><span class="comment">// currentw: 当前背包的总重量</span></span><br><span class="line"><span class="comment">// goods：数组，存储每个物品的质量</span></span><br><span class="line"><span class="comment">// n: 物品的数量</span></span><br><span class="line"><span class="comment">// weight: 背包应承受的重量</span></span><br><span class="line"><span class="keyword">const</span> f = <span class="function">(<span class="params">i, currentw, goods, n, weight</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 终止条件</span></span><br><span class="line">    <span class="keyword">if</span>(currentw === weight || i === n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currentw &gt; max)&#123;</span><br><span class="line">            <span class="comment">// 保存满足条件的最大值</span></span><br><span class="line">            max = currentw;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 选择跳过当前物品不装入背包</span></span><br><span class="line">    f(i+<span class="number">1</span>, currentw, goods, n, weight)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将当前物品装入背包</span></span><br><span class="line">    <span class="comment">// 判断当前物品装入背包之前是否超过背包的重量,如果已经超过当前背包重量，就不要就继续装了</span></span><br><span class="line">    <span class="keyword">if</span>(currentw + goods[i] &lt;= weight)&#123;</span><br><span class="line">        f(i+<span class="number">1</span> ,currentw + goods[i], goods, n, weight)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">3</span>]</span><br><span class="line">f(<span class="number">0</span>,<span class="number">0</span>,a,<span class="number">5</span>,<span class="number">10</span>)</span><br><span class="line"><span class="built_in">console</span>.log(max)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="递归的缺点"><a href="#递归的缺点" class="headerlink" title="递归的缺点"></a>递归的缺点</h2><blockquote>
+<p>虽然递归的使用非常的简洁，但是也有很多缺点，也是我们在使用中需要额外注意的地方和优化的地方。</p>
+</blockquote>
+<br>
+
+<h4 id="1、递归警惕堆栈溢出"><a href="#1、递归警惕堆栈溢出" class="headerlink" title="1、递归警惕堆栈溢出"></a>1、递归警惕堆栈溢出</h4><blockquote>
+<p>你可能会问，递归和系统中的堆栈有什么关联？不要急，听我慢慢细说。</p>
+</blockquote>
+<br>
+
+<h5 id="▉-理解堆栈溢出"><a href="#▉-理解堆栈溢出" class="headerlink" title="▉ 理解堆栈溢出"></a>▉ 理解堆栈溢出</h5><blockquote>
+<p>1）递归的本质就是重复调用本身的过程，本身是什么？当然是一个函数，那好，函数中有参数以及一些局部的声明的变量，相信很多小伙伴只会用函数，而不知道函数中的变量是怎么存储的吧。没关系，等你听我分析完，你就会了。</p>
+<p>2）函数中变量是存储到系统中的栈中的，栈数据结构的特点就是先进后出，后进先出。一个函数中的变量的使用情况就是随函数的声明周期变化的。当我们执行一个函数时，该函数的变量就会一直不断的压入栈中，当函数执行完毕销毁的时候，栈内的元素依次出栈。还是不懂，没关系，看下方示意图。</p>
+<p>3）我们理解了上述过程之后，回到递归上来，我们的递归调用是在函数里调用自身，且当前函数并没有销毁，因为当前函数在执行自身层层递归进去了，所以递归的过程，函数中的变量一直不断的压栈，由于我们系统栈或虚拟机栈空间是非常小的，当栈压满之后，再压时，就会导致堆栈溢出。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E5%8E%8B%E6%A0%88.png" alt=""></p>
+<h5 id="▉-解决办法"><a href="#▉-解决办法" class="headerlink" title="▉ 解决办法"></a>▉ 解决办法</h5><blockquote>
+<p>那么遇到这种情况，我们怎么解决呢？</p>
+</blockquote>
+<p>通常我们设置递归深度，简单的理解就是，如果递归超过我们设置的深度，我们就退出，不再递归下去。还是那排队打饭的例子，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 表示递归深度变量</span></span><br><span class="line"><span class="keyword">let</span> depth = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">	depth++；</span><br><span class="line">    <span class="comment">// 如果超过递归深度，抛出错误</span></span><br><span class="line">	<span class="keyword">if</span>(depth &gt; <span class="number">1000</span>) <span class="keyword">throw</span> <span class="string">'error'</span>;</span><br><span class="line">    <span class="comment">// 终止条件</span></span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>) retun <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 递推公式</span></span><br><span class="line">	<span class="keyword">return</span> f(n<span class="number">-1</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、递归警惕重复元素"><a href="#2、递归警惕重复元素" class="headerlink" title="2、递归警惕重复元素"></a>2、递归警惕重复元素</h4><blockquote>
+<p>有些递归问题中，存在重复计算问题，比如求斐波那契数列，我们画一下递归树如下图，我们会发现有很多重复递归计算的值，重复计算会导致程序的时间复杂度很高，而且是指数级别的，导致我们的程序效率低下。</p>
+</blockquote>
+<p>如下图递归树中，求斐波那契数列 <code>f(5)</code>的值，需要多次递归求 <code>f(3)</code> 和 <code>f(2)</code> 的值。</p>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E6%A0%91%E9%87%8D%E5%A4%8D.png" alt=""></p>
+<h5 id="▉-解决办法-1"><a href="#▉-解决办法-1" class="headerlink" title="▉ 解决办法"></a>▉ 解决办法</h5><blockquote>
+<p>重复计算问题，我们应该怎么解决？有的小伙伴想到了，我们把已经计算过的值保存起来，每次递归计算之前先检查一下保存的数据有没有该数据，如果有，我们拿出来直接用。如果没有，我们计算出来保存起来。一般我们用散列表来保存。（所谓的散列表就是键值对的形式，如 map ）</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 斐波那契数列改进后</span></span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 终止条件</span></span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果散列表中存在当前计算的值，就直接返回，不再进行递归计算</span></span><br><span class="line">    <span class="keyword">if</span>(map.has(n))&#123;</span><br><span class="line">        <span class="keyword">return</span> map.get(n);</span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递推公式</span></span><br><span class="line">    <span class="keyword">let</span> num = f(n<span class="number">-1</span>) + f(n<span class="number">-2</span>);</span><br><span class="line">    <span class="comment">// 将当前的值保存到散列表中</span></span><br><span class="line">    map.set(n,num)</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3、递归高空间复杂度"><a href="#3、递归高空间复杂度" class="headerlink" title="3、递归高空间复杂度"></a>3、递归高空间复杂度</h4><blockquote>
+<p>因为递归时函数的变量的存储需要额外的栈空间，当递归深度很深时，需要额外的内存占空间就会很多，所以递归有非常高的空间复杂度。</p>
+</blockquote>
+<p>比如：<code>f(n) = f(n-1)+1</code> ，空间复杂度并不是 <code>O(1)</code>，而是 <code>O(n)</code> 。</p>
+<br>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<p>我们一起对递归做一个简单的总结吧，如果你还是没有完全明白，没关系，多看几遍，说实话，我这个人比较笨，前期看递归还不知道看了几十遍才想明白，吃饭想，睡觉之前想，相信最后总会想明白的。</p>
+</blockquote>
+<h4 id="1、满足递归的三个条件"><a href="#1、满足递归的三个条件" class="headerlink" title="1、满足递归的三个条件"></a>1、满足递归的三个条件</h4><ul>
+<li>一个问题能不能分解成多个子问题来解决；</li>
+<li>该问题是否和子问题的解决思路相同；</li>
+<li>该问题是否有终止条件。</li>
+</ul>
+<h4 id="2、怎么写出递归代码"><a href="#2、怎么写出递归代码" class="headerlink" title="2、怎么写出递归代码"></a>2、怎么写出递归代码</h4><ul>
+<li>寻找递归终止条件；</li>
+<li>写出递推公式；</li>
+<li>转化成递归代码。</li>
+</ul>
+<h4 id="3、怎么理解递归？"><a href="#3、怎么理解递归？" class="headerlink" title="3、怎么理解递归？"></a>3、怎么理解递归？</h4><blockquote>
+<p>不要用大脑去想每一层递归的实现，记住这是计算机应该做的事情，我们要做的就是弄懂递归之间的关系，从而屏蔽掉层层递归的细节。</p>
+</blockquote>
+<h4 id="4、递归的缺点"><a href="#4、递归的缺点" class="headerlink" title="4、递归的缺点"></a>4、递归的缺点</h4><ul>
+<li>递归警惕堆栈溢出</li>
+<li>递归警惕重复计算</li>
+<li>递归的高空间复杂度</li>
+</ul>
+<br>
+
+<h2 id="最后想说的话"><a href="#最后想说的话" class="headerlink" title="最后想说的话"></a>最后想说的话</h2><p>最后可能说的比较打鸡血，很多人一遇到递归就会崩溃掉，比如我，哈哈。无论以后遇到什么困难，不要对它们产生恐惧，而是当做一种挑战，当你经过长时间的战斗，突破层层困难，最后突破挑战的时候，你会感激曾经的自己当初困难面前没有放弃。这一点我深有感触，有时候对于难题感到很无助，虽然自己没有在一所好的大学，没有好的资源，更没有人去专心的指导你，但是我一直相信这都是老天给我发出的挑战书，我会继续努力，写出更多高质量的文章。</p>
+<p><strong>如果觉得本文对你有帮助，点个赞，我希望能够让更多处在递归困惑的人看到，谢谢各位支持！</strong>下一篇我打算出一篇完整关于链表的文章，终极目标：将数据结构与算法每个知识点写成一系列的文章。</p>
+<hr>
+**作者：**小鹿
+
+<p><strong>座右铭：</strong>追求平淡不平凡，一生追求做一个不甘平凡的码农!</p>
+<p><strong>本文首发于 Github ，转载请说明出处：</strong><a href="https://github.com/luxiangqiang/Blog/blob/master/articel/数据结构与算法系列/数据结构与算法之递归系列.md" target="_blank" rel="noopener">https://github.com/luxiangqiang/Blog/blob/master/articel/数据结构与算法系列/数据结构与算法之递归系列.md</a></p>
+<p><strong>个人公众号：一个不甘平凡的码农。</strong></p>
+<h3 id="其他链接："><a href="#其他链接：" class="headerlink" title="其他链接："></a>其他链接：</h3><h4 id="1、LeetCode-30-道经典题详细解析"><a href="#1、LeetCode-30-道经典题详细解析" class="headerlink" title="1、LeetCode 30 道经典题详细解析"></a><a href="https://github.com/luxiangqiang/JS-LeetCode" target="_blank" rel="noopener">1、LeetCode 30 道经典题详细解析</a></h4><h4 id="2、Github：入门必会的基本数据结构与算法代码剖析"><a href="#2、Github：入门必会的基本数据结构与算法代码剖析" class="headerlink" title="2、Github：入门必会的基本数据结构与算法代码剖析"></a><a href="https://github.com/luxiangqiang/Data-Structure-Coding" target="_blank" rel="noopener">2、Github：入门必会的基本数据结构与算法代码剖析</a></h4><h4 id="3、Github：公众号留言小程序开源项目"><a href="#3、Github：公众号留言小程序开源项目" class="headerlink" title="3、Github：公众号留言小程序开源项目"></a><a href="https://github.com/luxiangqiang/WeiXin_MessageApplet" target="_blank" rel="noopener">3、Github：公众号留言小程序开源项目</a></h4>]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信公众号开发bug调试记录</title>
+    <url>/2020/02/15/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91Bug%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h3 id="公众号基本信息："><a href="#公众号基本信息：" class="headerlink" title="公众号基本信息："></a>公众号基本信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">公众号名称：         大连拓扑伟业</span><br><span class="line">公众号appId：        wxb6c7348e50d2d85b</span><br><span class="line">公众号AppSecre：     38087a07eea5992e85cdc4172d3750ad</span><br></pre></td></tr></table></figure>
+<h6 id="记录时间：2019-12-03-15-06"><a href="#记录时间：2019-12-03-15-06" class="headerlink" title="记录时间：2019/12/03 15:06"></a>记录时间：2019/12/03 15:06</h6><hr>
+<p>==bug出错描述：==</p>
+<ol>
+<li>扫码绑定未能加载出二维码</li>
+<li>加载出二维码微信扫码后无反应</li>
+<li>出错解决办法：</li>
+<li>F12查看调用接口是否正确</li>
+<li>服务器上相关网站的配置是否正确：</li>
+<li>heuwx.topedusoft.com：appsetting.json，</li>
+<li>heuwxapi.topedusoft.com：web.config，db.config，</li>
+<li>heuweb.topedusoft.com：web.config，global.js，custom.js</li>
+<li>网络过慢，重启IIS或重启远程服务器（本次扫码后无反应，重启服务器后好使）</li>
+</ol>
+<h6 id="记录时间：2019-12-04-16-00"><a href="#记录时间：2019-12-04-16-00" class="headerlink" title="记录时间：2019/12/04 16:00"></a>记录时间：2019/12/04 16:00</h6><hr>
+<p>==海事局问题：==</p>
+<ol>
+<li>文章点赞一直显示已评过，同时需要有接口返回是否已评过</li>
+<li>评论留言的点赞和点踩一直显示已评过，同时需要有接口返回是否已评过</li>
+<li>置顶，最新接口是否有？全部是按时间排的？？最新也是按照时间排的？？两者有什么区别？？</li>
+<li>微信一个公众号两个网址，得另外配一个微信网站？配完网站之后，在manage网站里配才可以公众号菜单</li>
+<li>开始扫码绑定，绑定成功之后才可以获取头像和昵称</li>
+</ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>公众号开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer题解</title>
+    <url>/2020/02/15/1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>数据库知识</title>
+    <url>/2020/02/15/1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>红黑树</title>
     <url>/2020/02/14/%E7%BA%A2%E9%BB%91%E6%A0%91/</url>
     <content><![CDATA[]]></content>

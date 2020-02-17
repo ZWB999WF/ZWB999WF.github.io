@@ -445,10 +445,10 @@
       
 
       
-        <h1 id="数据结构与算法之递归系列"><a href="#数据结构与算法之递归系列" class="headerlink" title="数据结构与算法之递归系列"></a>数据结构与算法之递归系列</h1><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E5%AF%BC%E5%9B%BE.jpg" alt=""></p>
+        <h1 id="数据结构与算法之递归系列"><a href="#数据结构与算法之递归系列" class="headerlink" title="数据结构与算法之递归系列"></a>数据结构与算法之递归系列</h1><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E5%AF%BC%E5%9B%BE.jpg" alt></p>
 <br>
 
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95.png" alt=""></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95.png" alt></p>
 <br>
 
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几个月之前就想写这样一篇文章分享给大家，由于自己有心而力不足，没有把真正的学到的东西沉淀下来，所以一直在不断的自学。可能是因为在一所三流大学，资源也比较少，只能自己在网搜索相关资料，在互联网上遇到了一些朋友的帮助下去深入理解，然后自己抽出大量时间做题总结、归纳，才会把已有的知识概念所被自己吸收和理解，形成了自己的技术思想体系。</p>
@@ -635,8 +635,8 @@
 <h5 id="八皇后问题"><a href="#八皇后问题" class="headerlink" title="八皇后问题"></a>八皇后问题</h5><blockquote>
 <p>在 8 X 8 的网格中，放入八个皇后（棋子），满足的条件是，任意两个皇后（棋子）都不能处于同一行、同一列或同一斜线上，问有多少种摆放方式？</p>
 </blockquote>
-<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%E6%AD%A3%E7%A1%AE.png" alt=""></p>
-<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98error.png" alt=""></p>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98%E6%AD%A3%E7%A1%AE.png" alt></p>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98error.png" alt></p>
 <p><strong>▉ 问题分析：</strong></p>
 <blockquote>
 <p>要想满足任意两个皇后（棋子）都不能处于同一行、同一列或同一斜线上，需要一一枚举皇后（棋子）的所有摆放情况，然后设定条件，筛选出满足条件的情况。</p>
@@ -749,7 +749,7 @@
 
 
 
-<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E5%8E%8B%E6%A0%88.png" alt=""></p>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F%E5%8E%8B%E6%A0%88.png" alt></p>
 <h5 id="▉-解决办法"><a href="#▉-解决办法" class="headerlink" title="▉ 解决办法"></a>▉ 解决办法</h5><blockquote>
 <p>那么遇到这种情况，我们怎么解决呢？</p>
 </blockquote>
@@ -762,7 +762,7 @@
 <p>有些递归问题中，存在重复计算问题，比如求斐波那契数列，我们画一下递归树如下图，我们会发现有很多重复递归计算的值，重复计算会导致程序的时间复杂度很高，而且是指数级别的，导致我们的程序效率低下。</p>
 </blockquote>
 <p>如下图递归树中，求斐波那契数列 <code>f(5)</code>的值，需要多次递归求 <code>f(3)</code> 和 <code>f(2)</code> 的值。</p>
-<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E6%A0%91%E9%87%8D%E5%A4%8D.png" alt=""></p>
+<p><img src="https://github.com/luxiangqiang/Blog/blob/master/images/%E9%80%92%E5%BD%92%E6%A0%91%E9%87%8D%E5%A4%8D.png" alt></p>
 <h5 id="▉-解决办法-1"><a href="#▉-解决办法-1" class="headerlink" title="▉ 解决办法"></a>▉ 解决办法</h5><blockquote>
 <p>重复计算问题，我们应该怎么解决？有的小伙伴想到了，我们把已经计算过的值保存起来，每次递归计算之前先检查一下保存的数据有没有该数据，如果有，我们拿出来直接用。如果没有，我们计算出来保存起来。一般我们用散列表来保存。（所谓的散列表就是键值对的形式，如 map ）</p>
 </blockquote>
@@ -847,8 +847,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/15/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91Bug%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/" rel="next" title="微信公众号开发bug调试记录">
-                <i class="fa fa-chevron-left"></i> 微信公众号开发bug调试记录
+              <a href="/2020/02/15/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91Bug%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/" rel="next" title="微信公众号开发Bug调试记录">
+                <i class="fa fa-chevron-left"></i> 微信公众号开发Bug调试记录
               </a>
             
           </div>
@@ -877,6 +877,32 @@
 
 
     <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
   </div>
@@ -940,7 +966,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -962,7 +988,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

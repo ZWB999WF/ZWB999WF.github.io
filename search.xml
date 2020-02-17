@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用后台管理新增文章</title>
+    <url>/2020/02/17/%E4%BD%BF%E7%94%A8%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>使用后台管理新增文章</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo+Github+Node搭建个人博客</title>
     <url>/2020/02/17/Hexo+Github+Node%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>Hexo：    <a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a><br>Github:     <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a><br>Next：<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a>  </p>
+    <content><![CDATA[<hr>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>Hexo：    <a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a><br>Github:     <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a><br>Next：<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a>  </p>
 <h3 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h3><blockquote>
 <p>Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题。<br>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，将前者称为站点配置文件， 后者称为主题配置文件。<br>注：修改站点配置文件后需重启网站，修改主题配置文件后直接刷新网页即可<br>scaffolds目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值。</p>
 </blockquote>
@@ -1201,7 +1208,8 @@
   <entry>
     <title>java从入门到精通</title>
     <url>/2019/04/16/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/</url>
-    <content><![CDATA[<p>字段解释：<br>这边title指的是文章的标题。<br>data指的是文章的创建时间，文章的排序规则也是根据这个字段来的，时间越后，排序越靠前。<br>tags指的是这个文章所对应的标签。<br>categories指的是文章所对应的分类。</p>
+    <content><![CDATA[<p>###使用后台管理修改文章</p>
+<p>字段解释：<br>这边title指的是文章的标题。<br>data指的是文章的创建时间，文章的排序规则也是根据这个字段来的，时间越后，排序越靠前。<br>tags指的是这个文章所对应的标签。<br>categories指的是文章所对应的分类。</p>
 ]]></content>
       <categories>
         <category>技术</category>
